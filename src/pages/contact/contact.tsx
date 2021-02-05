@@ -1,7 +1,5 @@
 import React, { useState, FC } from "react";
 import { Grid, TextField, Paper, Button, Typography } from "@material-ui/core";
-import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
-import SendIcon from "@material-ui/icons/Send";
 import useStyles from "./contact.styles";
 
 const initialInputs = {

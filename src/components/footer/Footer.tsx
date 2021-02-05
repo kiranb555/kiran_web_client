@@ -32,13 +32,6 @@ const Footer = () => {
           </IconButton>
         </Grid>
       </Grid>
-      <Grid container alignItems="center" justify="center">
-        <Grid item>
-          <Typography variant="body1">
-            &copy; Kiran 2021, made with &#x2764;
-          </Typography>
-        </Grid>
-      </Grid>
     </footer>
   );
 };

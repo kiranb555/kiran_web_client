@@ -7,17 +7,14 @@ import {
   IconButton,
   Drawer,
   Divider,
-  Grid,
   List,
   ListItem,
   ListItemIcon,
   ListItemText,
   useMediaQuery,
   useTheme,
-  Box,
   Tabs,
   Tab,
-  colors,
 } from "@material-ui/core";
 import {
   Menu,
@@ -25,19 +22,8 @@ import {
   PersonRounded,
   CallRounded,
 } from "@material-ui/icons";
-import { makeStyles } from "@material-ui/core/styles";
 
-const useStyle = makeStyles({
-  list: {
-    width: 250,
-  },
-  fullList: {
-    width: "auto",
-  },
-  selectedClr: {
-    color: colors.yellow[500],
-  },
-});
+import useStyle from "./NavBar.styles";
 
 const Navigation = (props) => {
   const classes = useStyle();
@@ -74,7 +60,9 @@ const Navigation = (props) => {
       <Toolbar>
         {isLargeScreen ? (
           <>
-            <Typography variant="h5">Kiranweb.in</Typography>
+            <Typography variant="h5" className={classes.logo}>
+              kiranweb.in
+            </Typography>
             <div style={{ flex: 1 }}></div>
             <div>
               <Tabs
@@ -100,7 +88,9 @@ const Navigation = (props) => {
               <Menu />
             </IconButton>
             <div style={{ flex: 1 }}></div>
-            <Typography variant="h5">Kiranweb.in</Typography>
+            <Typography variant="h5" className={classes.logo}>
+              kiranweb.in
+            </Typography>
           </>
         )}
       </Toolbar>
@@ -112,7 +102,7 @@ const Navigation = (props) => {
             {navlist.map((txt, idx) => (
               <ListItem button key={txt} onClick={(e) => HandleRoute(txt, idx)}>
                 <ListItemIcon>
-                  {idx == 0 ? (
+                  {idx === 0 ? (
                     <HomeRounded />
                   ) : idx === 1 ? (
                     <PersonRounded />

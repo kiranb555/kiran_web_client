@@ -1,10 +1,10 @@
 const AppliedTheme = {
   mypalette: {
     primary: {
-      main: "#381460",
+      main: "#764abc",
     },
     secondary: {
-      main: "#b21f66",
+      main: "#90BC4A",
     },
     ternary: {
       main: "#fe346e",
@@ -12,6 +12,13 @@ const AppliedTheme = {
     accent: {
       main: "#ffbd69",
     },
+
+    // bg: {
+    //   main: "#f7f4fb",
+    // },
+    // txt: {
+    //   main: "#170e25",
+    // },
   },
 };
 
