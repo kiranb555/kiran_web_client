@@ -6,8 +6,7 @@ export default makeStyles((theme) => ({
     marginTop: "auto",
 
     padding: "20px 0",
-    color: theme.palette.color,
-    backgroundColor: theme.palette.primary.dark,
-    // textAlign: "center",
+    color: theme.palette.common.white,
+    backgroundColor: theme.palette.common.black,
   },
 }));

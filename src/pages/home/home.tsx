@@ -1,106 +1,159 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import { withRouter } from "react-router-dom";
-import { Button, Typography, Grid } from "@material-ui/core";
-import { KeyboardArrowRight } from "@material-ui/icons";
-import HomeCard from "../../components/homeCards";
+import {
+  Button,
+  Typography,
+  Grid,
+  Card,
+  CardContent,
+  CardMedia,
+  Snackbar,
+} from "@material-ui/core";
+import MuiAlert, { AlertProps } from "@material-ui/lab/Alert";
+import { KeyboardArrowDownOutlined } from "@material-ui/icons";
+// import HomeCard from "../../components/homeCards";
 import useStyles from "./home.styles.js";
-// import Design from "../../svg/design";
-// import JsReact from "../../svg/jsReact";
-// import DataViz from "../../svg/dataViz";
+import dataviz from "./dataviz.jpg";
+
+function Alert(props: AlertProps) {
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
 
 const Home: FC<{}> = (props) => {
   const classes: any = useStyles();
-  const handleRoute = (props: any) => {
-    props.history.push("/about");
+  const [open, setOpen] = useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
   };
 
+  const handleClose = (event?: React.SyntheticEvent, reason?: string) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
+  };
   return (
     <div className={classes.homePG}>
       <div className={classes.banner}>
         <div>
           <Typography variant="h2">I'm Kiran </Typography>
           <Typography variant="h6">Front-end Developer</Typography>
+
           <Button
             variant="contained"
             color="secondary"
             style={{ margin: "10px" }}
-            onClick={() => handleRoute(props)}
+            href="kiran_2021.pdf"
+            onClick={handleClick}
+            download
           >
-            know more <KeyboardArrowRight />
+            Download Resume <KeyboardArrowDownOutlined />
           </Button>
         </div>
       </div>
-      <div
-        style={{
-          fontSize: "28px",
-          textAlign: "center",
-          margin: "35px 0 20px 0",
-        }}
-      >
-        skills & services
-      </div>
+      <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity="success">
+          Resume Downloaded successfully !
+        </Alert>
+      </Snackbar>
+      <Typography variant="h4" align="center">
+        Skills & services
+      </Typography>
       <div style={{ flexGrow: 1, padding: "20px" }}>
-        <Grid container item justify="center" spacing={4}>
+        <Grid container justify="center" spacing={4}>
           <Grid item>
-            <HomeCard>
-              <Typography gutterBottom variant="h5" component="h2">
-                React js
-              </Typography>
-              <div style={{ height: "300px", width: "100%" }}>
-                {/* <JsReact /> */}
-              </div>
-            </HomeCard>
+            <Card
+              style={{
+                width: "300px",
+                height: "350px",
+              }}
+            >
+              <CardMedia
+                component="img"
+                alt="dataviz"
+                image={dataviz}
+                title="data visualization"
+                height="180"
+              ></CardMedia>
+              <CardContent>
+                <Typography gutterBottom variant="h5">
+                  Responsive Web Development
+                </Typography>
+                <Typography
+                  variant="body2"
+                  color="textSecondary"
+                  component="p"
+                  gutterBottom
+                >
+                  I value the historical data, representing data in
+                  visualization is really important in modern web development
+                  trend.
+                </Typography>
+              </CardContent>
+            </Card>
           </Grid>
           <Grid item>
-            <HomeCard>
-              <Typography gutterBottom variant="h5" component="h2">
-                Have a Design
-              </Typography>
-              <div style={{ height: "50%", width: "100%" }}>
-                {/* <Design /> */}
-              </div>
-            </HomeCard>
-          </Grid>
-          <Grid item>
-            <HomeCard>
-              <Typography gutterBottom variant="h5" component="h2">
-                Data Visualization
-              </Typography>
-              <div style={{ height: "300px", width: "100%" }}>
-                {/* <DataViz /> */}
-              </div>
-            </HomeCard>
+            <Card
+              style={{
+                width: "300px",
+                height: "350px",
+              }}
+            >
+              <CardMedia
+                component="img"
+                alt="dataviz"
+                image={dataviz}
+                title="data visualization"
+                height="180"
+              ></CardMedia>
+              <CardContent>
+                <Typography gutterBottom variant="h5">
+                  React js
+                </Typography>
+                <Typography
+                  variant="body2"
+                  color="textSecondary"
+                  component="p"
+                  gutterBottom
+                >
+                  React js is my framework of choice
+                </Typography>
+              </CardContent>
+            </Card>
           </Grid>
 
           <Grid item>
-            <HomeCard>
-              <Typography gutterBottom variant="h5" component="h2">
-                React js
-              </Typography>
-              <div style={{ height: "300px", width: "100%" }}>
-                {/* <JsReact /> */}
-              </div>
-            </HomeCard>
-          </Grid>
-          <Grid item>
-            <HomeCard>
-              <Typography gutterBottom variant="h5" component="h2">
-                Have a Design
-              </Typography>
-              <div style={{ height: "50%", width: "100%" }}>
-                {/* <Design /> */}
-              </div>
-            </HomeCard>
-          </Grid>
-          <Grid item>
-            <HomeCard>
-              <Typography gutterBottom variant="h5" component="h2">
-                Data Visualization
-              </Typography>
-              <div style={{ height: "300px", width: "100%" }}>
-                {/* <DataViz /> */}
-              </div>
-            </HomeCard>
+            <Card
+              style={{
+                width: "300px",
+                height: "350px",
+              }}
+            >
+              <CardMedia
+                component="img"
+                alt="dataviz"
+                image={dataviz}
+                title="data visualization"
+                height="180"
+              ></CardMedia>
+              <CardContent>
+                <Typography gutterBottom variant="h5">
+                  Data visualization
+                </Typography>
+                <Typography
+                  variant="body2"
+                  color="textSecondary"
+                  component="p"
+                  gutterBottom
+                >
+                  I value the historical data, representing data in
+                  visualization is really important in modern web development
+                  trend.
+                </Typography>
+              </CardContent>
+            </Card>
           </Grid>
         </Grid>
       </div>
@@ -109,3 +162,5 @@ const Home: FC<{}> = (props) => {
 };
 
 export default withRouter(Home);
+
+// https://mattfarley.ca/
