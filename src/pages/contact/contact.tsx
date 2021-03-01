@@ -111,6 +111,7 @@ const Contact: FC<{}> = () => {
           </Grid>
         </form>
       </div>
+      <div>form submitted popup / snack bar</div>
     </Paper>
   );
 };

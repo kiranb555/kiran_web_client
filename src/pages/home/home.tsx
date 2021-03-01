@@ -157,6 +157,8 @@ const Home: FC<{}> = (props) => {
           </Grid>
         </Grid>
       </div>
+      <div>add material skeliton to cards</div>
+      <h2>projects</h2>
     </div>
   );
 };

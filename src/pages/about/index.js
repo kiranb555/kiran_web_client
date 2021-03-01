@@ -1,3 +1,3 @@
-import About from "./about.jsx";
+import About from "./about.tsx";
 
 export default About;
