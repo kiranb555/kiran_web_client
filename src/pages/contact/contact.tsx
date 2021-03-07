@@ -1,118 +1,54 @@
-import React, { useState, FC } from "react";
-import { Grid, TextField, Paper, Button, Typography } from "@material-ui/core";
+import React, { FC } from "react";
+import { Snackbar, Typography, Container } from "@material-ui/core";
+import MuiAlert, { AlertProps } from "@material-ui/lab/Alert";
+import { useSelector } from "react-redux";
+import ContactForm from "../../components/contactForm";
 import useStyles from "./contact.styles";
 
-const initialInputs = {
-  firstName: "",
-  secondName: "",
-  email: "",
-  phone: "",
-  message: "",
-};
-
-interface initialIps {
-  firstName: string;
-  secondName: string;
-  email: string;
-  phone?: string | number;
-  message?: string;
-}
-
 const Contact: FC<{}> = () => {
-  const [values, setValues] = useState<initialIps>(initialInputs);
-
   const classes = useStyles();
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
-  ) => {
-    let { name, value } = e.target;
-    setValues({
-      ...values,
-      [name]: value,
-    });
-  };
+  interface CF {
+    contact: {
+      fromSubmit: Boolean;
+      formSubmitFailure: Boolean;
+      formSubmitSuccess: Boolean;
+    };
+  }
+  const contact = useSelector((state: CF) => state.contact);
+
+  console.log(contact);
+  console.log(contact.fromSubmit);
+
+  function Alert(props: AlertProps) {
+    return <MuiAlert elevation={6} variant="filled" {...props} />;
+  }
+
   return (
-    <Paper className={classes.contactPaper}>
-      <div className={classes.contact}>
-        <Typography variant="h4" align="center">
+    <section className={classes.contactHolder}>
+      <Container maxWidth="md">
+        <Typography variant="h4" align="center" className={classes.heading}>
           CONTACT
         </Typography>
-        <form noValidate autoComplete="off">
-          <Grid container spacing={5} alignContent="center">
-            <Grid item md={6} sm={12} xs={12}>
-              <TextField
-                label="First Name"
-                name="firstName"
-                value={values.firstName}
-                onChange={handleChange}
-                fullWidth
-                required
-              />
-            </Grid>
-            <Grid item md={6} sm={12} xs={12}>
-              <TextField
-                label="Second Name"
-                name="secondName"
-                value={values.secondName}
-                onChange={handleChange}
-                fullWidth
-              />
-            </Grid>
-            <Grid item md={12} sm={12} xs={12}>
-              <TextField
-                label="Phone"
-                type="tel"
-                name="phone"
-                value={values.phone}
-                onChange={handleChange}
-                fullWidth
-              />
-            </Grid>
-            <Grid item md={12} sm={12} xs={12}>
-              <TextField
-                label="Email"
-                type="email"
-                name="email"
-                value={values.email}
-                onChange={handleChange}
-                fullWidth
-                required
-              />
-            </Grid>
-            <Grid item md={12} sm={12} xs={12}>
-              <TextField
-                label="Message"
-                name="message"
-                value={values.message}
-                onChange={handleChange}
-                fullWidth
-                spellCheck
-              />
-            </Grid>
-            <Grid
-              item
-              md={12}
-              sm={12}
-              xs={12}
-              className={classes.contactSubmitBtnHolder}
-            >
-              <Button
-                variant="contained"
-                size="large"
-                color="secondary"
-                // fullWidth
-                // endIcon={<ArrowForwardIosIcon>send</ArrowForwardIosIcon>}
-                onClick={(e) => alert("1")}
-              >
-                submit
-              </Button>
-            </Grid>
-          </Grid>
-        </form>
-      </div>
-      <div>form submitted popup / snack bar</div>
-    </Paper>
+
+        <ContactForm />
+        {contact.formSubmitSuccess && (
+          <Snackbar open={true}>
+            <Alert severity="success">
+              Your Details submitted successfully. We will contact you ASP,
+              Thank you
+            </Alert>
+          </Snackbar>
+        )}
+        {contact.formSubmitFailure && (
+          <Snackbar open={true}>
+            <Alert severity="error">
+              Failed to submit details, please try again later.
+            </Alert>
+          </Snackbar>
+        )}
+      </Container>
+    </section>
   );
 };
 

@@ -2,6 +2,9 @@ import { makeStyles } from "@material-ui/core/styles";
 import { colors } from "@material-ui/core";
 
 const useStyle = makeStyles({
+  appbar: {
+    height: "56px !important",
+  },
   list: {
     width: 250,
   },
@@ -12,8 +15,7 @@ const useStyle = makeStyles({
     color: colors.yellow[500],
   },
   logo: {
-    // fontStyle: "italic",
-    fontFamily: '"Segoe UI"',
+    fontFamily: "Segoe UI",
   },
 });
 

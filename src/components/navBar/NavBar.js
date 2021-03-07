@@ -56,8 +56,8 @@ const Navigation = (props) => {
   };
 
   return (
-    <AppBar color="primary" position="sticky">
-      <Toolbar>
+    <AppBar color="primary" position="static" className={classes.appbar}>
+      <Toolbar disableGutters={false} variant="dense">
         {isLargeScreen ? (
           <>
             <Typography variant="h5" className={classes.logo}>

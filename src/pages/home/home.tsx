@@ -36,12 +36,17 @@ const Home: FC<{}> = (props) => {
   };
   return (
     <div className={classes.homePG}>
+      {console.log(props)}
       <div className={classes.banner}>
         <div>
-          <Typography variant="h2">I'm Kiran </Typography>
-          <Typography variant="h6">Front-end Developer</Typography>
+          <Typography variant="h2" color="textPrimary">
+            G'day, I'm Kiran{" "}
+          </Typography>
+          <Typography variant="h6" color="textPrimary">
+            Front-end Developer
+          </Typography>
 
-          <Button
+          {/* <Button
             variant="contained"
             color="secondary"
             style={{ margin: "10px" }}
@@ -50,7 +55,7 @@ const Home: FC<{}> = (props) => {
             download
           >
             Download Resume <KeyboardArrowDownOutlined />
-          </Button>
+          </Button> */}
         </div>
       </div>
       <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>

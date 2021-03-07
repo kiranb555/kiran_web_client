@@ -1,4 +1,4 @@
-import { makeStyles, createStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles((theme) => ({
   App: {
@@ -7,7 +7,7 @@ export default makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       height: `calc(100vh - 56px)`,
     },
-    height: `calc(100vh - 64px)`,
+    height: `calc(100vh - 56px)`,
   },
   paper: {
     padding: theme.spacing(2),
@@ -23,6 +23,6 @@ export default makeStyles((theme) => ({
   themeIcon: {
     position: "fixed",
     left: "10px",
-    bottom: "100px",
+    bottom: "20vh",
   },
 }));

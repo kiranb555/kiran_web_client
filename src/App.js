@@ -1,5 +1,7 @@
 import React, { useState, lazy, Suspense } from "react";
 import "fontsource-roboto";
+import { Provider } from "react-redux";
+import store from "./redux/store";
 import {
   BrowserRouter as Router,
   Switch,
@@ -42,37 +44,39 @@ function App() {
 
   return (
     <Router>
-      <ThemeProvider theme={appliedTheme}>
-        <CssBaseline />
-        <NavBar />
-        <div className={classes.App}>
-          <Suspense
-            fallback={
-              <div className={classes.suspense}>
-                <CircularProgress />
-              </div>
-            }
-          >
-            <Switch>
-              <Route path="/" exact component={Home} />
-              <Route path="/about" component={About} />
-              <Route path="/contact" component={Contact} />
-              <Route component={Error} />
-            </Switch>
-          </Suspense>
-          <div className={classes.themeIcon}>
-            <IconButton
-              edge="end"
-              color="inherit"
-              aria-label="mode"
-              onClick={() => setTheme(!theme)}
+      <Provider store={store}>
+        <ThemeProvider theme={appliedTheme}>
+          <CssBaseline />
+          <NavBar />
+          <main className={classes.App}>
+            <Suspense
+              fallback={
+                <div className={classes.suspense}>
+                  <CircularProgress />
+                </div>
+              }
             >
-              {icon}
-            </IconButton>
-          </div>
-          <Footer />
-        </div>
-      </ThemeProvider>
+              <Switch>
+                <Route path="/" exact component={Home} />
+                <Route path="/about" component={About} />
+                <Route path="/contact" component={Contact} />
+                <Route component={Error} />
+              </Switch>
+            </Suspense>
+            <div className={classes.themeIcon}>
+              <IconButton
+                edge="end"
+                color="inherit"
+                aria-label="mode"
+                onClick={() => setTheme(!theme)}
+              >
+                {icon}
+              </IconButton>
+            </div>
+            <Footer />
+          </main>
+        </ThemeProvider>
+      </Provider>
     </Router>
   );
 }
