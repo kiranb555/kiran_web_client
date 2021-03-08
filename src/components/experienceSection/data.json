@@ -1,0 +1,20 @@
+    [
+        {
+            "company_name" : "Digital FinTech solutions",
+            "title" : "Product development engineer",
+            "period" : "Oct 2018 - Feb 2021",
+            "projects" : "IQCIO",
+            "team_size" : "2",
+            "skills" : ["html","css","Js","React.js","Redux","d3.js","sass","bootstrap","highcharts"],
+            "description" : "lorem oeiajfo if ige pe pep pelplaplp ef jeub pe"
+        },
+        {
+            "company_name" : "Gapoon",
+            "title" : "Intern",
+            "period" : "July 2018 - Aug 2018",
+            "projects" : "internal website",
+            "team_size":"4",
+            "skills":["html","css","js"],
+            "description" : "lorem oeiajfo if ige pe pep pelplaplp ef jeub pe"
+        }
+    ]
