@@ -28,8 +28,14 @@ export default function ExperienceSection() {
                 {obj.company_name}
               </Typography>
             </div>
+
             <div className={classes.column}>
               <Typography className={classes.secondaryHeading}>
+                {obj.title}
+              </Typography>
+            </div>
+            <div className={classes.column}>
+              <Typography className={classes.ternaryHeading}>
                 {obj.period}
               </Typography>
             </div>

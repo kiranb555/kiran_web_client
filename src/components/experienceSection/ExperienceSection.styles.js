@@ -12,6 +12,14 @@ const useStyles = makeStyles((theme) =>
     secondaryHeading: {
       fontSize: theme.typography.pxToRem(20),
       color: theme.palette.text.secondary,
+      textTransform: "capitalize",
+    },
+    ternaryHeading: {
+      fontSize: theme.typography.pxToRem(16),
+      color: theme.palette.text.secondary,
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
     },
     icon: {
       verticalAlign: "bottom",

@@ -54,13 +54,13 @@ export const forSubmitHandler = () => {
         console.log(response);
         dispatch(formSubmitSuccess());
         // resetting form data
-        setTimeout(() => dispatch(formReset()), 5000);
+        setTimeout(() => dispatch(formReset()), 6000);
       })
       .catch((err) => {
         console.log(err);
         dispatch(formSubmitFailure());
         // resetting form data
-        setTimeout(() => dispatch(formReset()), 5000);
+        setTimeout(() => dispatch(formReset()), 6000);
       });
   };
 };
