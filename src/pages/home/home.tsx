@@ -11,9 +11,11 @@ import {
 } from "@material-ui/core";
 import MuiAlert, { AlertProps } from "@material-ui/lab/Alert";
 import { KeyboardArrowDownOutlined } from "@material-ui/icons";
+import BusinessCenterRoundedIcon from "@material-ui/icons/BusinessCenterRounded";
 // import HomeCard from "../../components/homeCards";
 import useStyles from "./home.styles.js";
 import dataviz from "./dataviz.jpg";
+import Particles from "react-particles-js";
 
 function Alert(props: AlertProps) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -37,6 +39,7 @@ const Home: FC<{}> = (props) => {
   return (
     <div className={classes.homePG}>
       {console.log(props)}
+
       <div className={classes.banner}>
         <div>
           <Typography variant="h2" color="textPrimary">
@@ -46,7 +49,7 @@ const Home: FC<{}> = (props) => {
             Front-end Developer
           </Typography>
 
-          {/* <Button
+          <Button
             variant="contained"
             color="secondary"
             style={{ margin: "10px" }}
@@ -55,8 +58,71 @@ const Home: FC<{}> = (props) => {
             download
           >
             Download Resume <KeyboardArrowDownOutlined />
+          </Button>
+          {/* <Button
+            variant="contained"
+            color="secondary"
+            style={{ margin: "10px", width: "150px" }}
+            href="kiran_2021.pdf"
+            onClick={handleClick}
+            download
+          >
+            Hire Me <BusinessCenterRoundedIcon />
           </Button> */}
         </div>
+        <Particles
+          params={{
+            particles: {
+              number: {
+                value: 160,
+                density: {
+                  enable: false,
+                },
+              },
+              size: {
+                value: 3,
+                random: true,
+                anim: {
+                  speed: 4,
+                  size_min: 0.3,
+                },
+              },
+              line_linked: {
+                enable: false,
+              },
+              move: {
+                random: true,
+                speed: 1,
+                direction: "top",
+                out_mode: "out",
+              },
+            },
+            interactivity: {
+              events: {
+                onhover: {
+                  enable: true,
+                  mode: "bubble",
+                },
+                onclick: {
+                  enable: true,
+                  mode: "repulse",
+                },
+              },
+              modes: {
+                bubble: {
+                  distance: 250,
+                  duration: 2,
+                  size: 0,
+                  opacity: 0,
+                },
+                repulse: {
+                  distance: 400,
+                  duration: 4,
+                },
+              },
+            },
+          }}
+        />
       </div>
       <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
         <Alert onClose={handleClose} severity="success">

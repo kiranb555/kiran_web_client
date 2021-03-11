@@ -8,6 +8,7 @@ import {
 } from "@material-ui/icons";
 import { fetchActions } from "../../redux";
 import ExperienceSection from "../../components/experienceSection";
+import Carousel from "../../components/carousel";
 import useStyles from "./about.styles";
 
 import "./about.styles";
@@ -70,16 +71,19 @@ const About = (props: any) => {
       <Fade in={true}>
         <Container maxWidth="md">
           <section className={classes.section}>
-            <Typography variant="h4" color="textPrimary">
+            <Typography
+              variant="h4"
+              color="primary"
+              className={classes.section__header}
+            >
               About
             </Typography>
             {/* <button onClick={clickMe}>click me</button> */}
-            <p>
-              Hi, i'm <span style={{ color: "red" }}>Kiran</span>, from
-              Bangalore, India. Professionally, i'm a Software Engineer,
-              currently working in a awesome startup. I'm passionate about
-              bringing both the technical and visual aspects of digital products
-              in to life.
+            <p className={classes.aboutPara}>
+              Hi, i'm <span>Kiran</span>, from Bangalore, India. Professionally,
+              i'm a Software Engineer, currently working in a awesome startup.
+              I'm passionate about bringing both the technical and visual
+              aspects of digital products in to life.
             </p>
             <p>
               I love frontend web development and offcourse javascript.
@@ -88,10 +92,9 @@ const About = (props: any) => {
             </p>
             <p>
               Apart from being a tech geek, you can find me travelling{" "}
-              <DriveEtaRounded color="secondary" /> , doing photography
-              <PhotoCameraRounded color="secondary" />
-              , or in the gym
-              <FitnessCenterRounded color="secondary" />
+              {/* <DriveEtaRounded color="secondary" />  */}, doing photography
+              {/* <PhotoCameraRounded color="secondary" /> */}, or in the gym
+              {/* <FitnessCenterRounded color="secondary" /> */}
             </p>
             <div>
               <button>Get in touch</button>
@@ -99,7 +102,11 @@ const About = (props: any) => {
           </section>
 
           <section className={classes.section}>
-            <Typography variant="h4" color="textPrimary">
+            <Typography
+              variant="h4"
+              color="primary"
+              className={classes.section__header}
+            >
               Skills
             </Typography>
             <div>
@@ -108,7 +115,7 @@ const About = (props: any) => {
                   key={id}
                   label={skill}
                   variant="outlined"
-                  color="primary"
+                  color="secondary"
                   className={classes.skillChip}
                 />
               ))}
@@ -116,35 +123,59 @@ const About = (props: any) => {
           </section>
 
           <section className={classes.section}>
-            <Typography variant="h4" color="textPrimary">
+            <Typography
+              variant="h4"
+              color="primary"
+              className={classes.section__header}
+            >
               Experience
             </Typography>
             <ExperienceSection />
           </section>
 
           <section className={classes.section}>
-            <Typography variant="h4" color="textPrimary">
+            <Typography
+              variant="h4"
+              color="primary"
+              className={classes.section__header}
+            >
               Education
             </Typography>
             <div>
               {education.map((edu, id) => (
                 <Paper key={id} elevation={1} className={classes.paper}>
-                  <div>Institution : {edu.institute}</div>
-                  <div>Course : {edu.course}</div>
-                  <div>Period : {edu.year}</div>
+                  <div className={classes.educationHolder}>
+                    <span>Institution </span>
+                    <span style={{ flex: 2 }}>{edu.institute}</span>
+                  </div>
+                  <div className={classes.educationHolder}>
+                    <span>Course </span>
+                    <span style={{ flex: 2 }}>
+                      {edu.branch
+                        ? `${edu.course} (${edu.branch})`
+                        : `${edu.course}`}
+                    </span>
+                  </div>
+                  <div className={classes.educationHolder}>
+                    <span>Period </span>
+                    <span style={{ flex: 2 }}>{edu.year}</span>
+                  </div>
                 </Paper>
               ))}
             </div>
           </section>
 
           <section className={classes.section}>
-            <Typography variant="h4" color="textPrimary">
-              Hobby photography grid
+            <Typography
+              variant="h4"
+              color="primary"
+              className={classes.section__header}
+            >
+              Hobby photography
             </Typography>
-            <p>
-              add photography / grid card with location details or descriptions,
-              add skelitons while loading. <b>Text with Carousel effect</b>
-            </p>
+            <div>
+              <Carousel />
+            </div>
           </section>
         </Container>
       </Fade>

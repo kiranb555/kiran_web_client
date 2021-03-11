@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) =>
       width: 20,
     },
     details: {
-      alignItems: "center",
+      flexDirection: "column",
     },
     column: {
       flexBasis: "33.33%",
