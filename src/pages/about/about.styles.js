@@ -1,6 +1,6 @@
 import { makeStyles, createStyles } from "@material-ui/styles";
 
-const useStyles = makeStyles(({ theme }) =>
+const useStyles = makeStyles((theme) =>
   createStyles({
     section: {
       margin: "20px 0",
@@ -8,7 +8,11 @@ const useStyles = makeStyles(({ theme }) =>
     },
     section__header: {
       margin: "25px 0 20px 0",
-      borderBottom: "1px solid red",
+      // borderBottom: "1px solid red",
+      "section__header::after": {
+        content: "",
+        borderBottom: "1px solid red",
+      },
     },
     skillChip: {
       textTransform: "uppercase",
@@ -16,7 +20,7 @@ const useStyles = makeStyles(({ theme }) =>
     },
     aboutPara: {
       "& span": {
-        color: theme,
+        color: "red",
       },
     },
     paper: {
@@ -30,6 +34,7 @@ const useStyles = makeStyles(({ theme }) =>
       },
       "& span:first-child": {
         flex: "1",
+        color: theme.palette.text.secondary,
 
         "@media (max-width : 425px)": {
           display: "none",

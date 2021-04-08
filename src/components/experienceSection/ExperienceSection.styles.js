@@ -7,7 +7,6 @@ const useStyles = makeStyles((theme) =>
     },
     heading: {
       fontSize: theme.typography.pxToRem(20),
-      fontWeight: "bold",
     },
     secondaryHeading: {
       fontSize: theme.typography.pxToRem(20),
@@ -27,7 +26,12 @@ const useStyles = makeStyles((theme) =>
       width: 20,
     },
     details: {
+      padding: "20px",
       flexDirection: "column",
+      gap: "10px",
+    },
+    desc: {
+      color: theme.palette.text.secondary,
     },
     column: {
       flexBasis: "33.33%",

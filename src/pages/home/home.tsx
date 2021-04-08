@@ -1,21 +1,10 @@
 import React, { FC, useState } from "react";
 import { withRouter } from "react-router-dom";
-import {
-  Button,
-  Typography,
-  Grid,
-  Card,
-  CardContent,
-  CardMedia,
-  Snackbar,
-} from "@material-ui/core";
+import { Button, Typography, Snackbar } from "@material-ui/core";
 import MuiAlert, { AlertProps } from "@material-ui/lab/Alert";
 import { KeyboardArrowDownOutlined } from "@material-ui/icons";
-import BusinessCenterRoundedIcon from "@material-ui/icons/BusinessCenterRounded";
-// import HomeCard from "../../components/homeCards";
+import SkillsAndServiceCards from "../../components/skillsAndServiceCards";
 import useStyles from "./home.styles.js";
-import dataviz from "./dataviz.jpg";
-import Particles from "react-particles-js";
 
 function Alert(props: AlertProps) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -33,13 +22,10 @@ const Home: FC<{}> = (props) => {
     if (reason === "clickaway") {
       return;
     }
-
     setOpen(false);
   };
   return (
     <div className={classes.homePG}>
-      {console.log(props)}
-
       <div className={classes.banner}>
         <div>
           <Typography variant="h2" color="textPrimary">
@@ -48,7 +34,6 @@ const Home: FC<{}> = (props) => {
           <Typography variant="h6" color="textPrimary">
             Front-end Developer
           </Typography>
-
           <Button
             variant="contained"
             color="secondary"
@@ -70,166 +55,13 @@ const Home: FC<{}> = (props) => {
             Hire Me <BusinessCenterRoundedIcon />
           </Button> */}
         </div>
-        <Particles
-          params={{
-            particles: {
-              number: {
-                value: 160,
-                density: {
-                  enable: false,
-                },
-              },
-              size: {
-                value: 3,
-                random: true,
-                anim: {
-                  speed: 4,
-                  size_min: 0.3,
-                },
-              },
-              line_linked: {
-                enable: false,
-              },
-              move: {
-                random: true,
-                speed: 1,
-                direction: "top",
-                out_mode: "out",
-              },
-            },
-            interactivity: {
-              events: {
-                onhover: {
-                  enable: true,
-                  mode: "bubble",
-                },
-                onclick: {
-                  enable: true,
-                  mode: "repulse",
-                },
-              },
-              modes: {
-                bubble: {
-                  distance: 250,
-                  duration: 2,
-                  size: 0,
-                  opacity: 0,
-                },
-                repulse: {
-                  distance: 400,
-                  duration: 4,
-                },
-              },
-            },
-          }}
-        />
       </div>
       <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
         <Alert onClose={handleClose} severity="success">
           Resume Downloaded successfully !
         </Alert>
       </Snackbar>
-      <Typography variant="h4" align="center">
-        Skills & services
-      </Typography>
-      <div style={{ flexGrow: 1, padding: "20px" }}>
-        <Grid container justify="center" spacing={4}>
-          <Grid item>
-            <Card
-              style={{
-                width: "300px",
-                height: "350px",
-              }}
-            >
-              <CardMedia
-                component="img"
-                alt="dataviz"
-                image={dataviz}
-                title="data visualization"
-                height="180"
-              ></CardMedia>
-              <CardContent>
-                <Typography gutterBottom variant="h5">
-                  Responsive Web Development
-                </Typography>
-                <Typography
-                  variant="body2"
-                  color="textSecondary"
-                  component="p"
-                  gutterBottom
-                >
-                  I value the historical data, representing data in
-                  visualization is really important in modern web development
-                  trend.
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-          <Grid item>
-            <Card
-              style={{
-                width: "300px",
-                height: "350px",
-              }}
-            >
-              <CardMedia
-                component="img"
-                alt="dataviz"
-                image={dataviz}
-                title="data visualization"
-                height="180"
-              ></CardMedia>
-              <CardContent>
-                <Typography gutterBottom variant="h5">
-                  React js
-                </Typography>
-                <Typography
-                  variant="body2"
-                  color="textSecondary"
-                  component="p"
-                  gutterBottom
-                >
-                  React js is my framework of choice
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-
-          <Grid item>
-            <Card
-              style={{
-                width: "300px",
-                height: "350px",
-              }}
-            >
-              <CardMedia
-                component="img"
-                alt="dataviz"
-                image={dataviz}
-                title="data visualization"
-                height="180"
-              ></CardMedia>
-              <CardContent>
-                <Typography gutterBottom variant="h5">
-                  Data visualization
-                </Typography>
-                <Typography
-                  variant="body2"
-                  color="textSecondary"
-                  component="p"
-                  gutterBottom
-                >
-                  I value the historical data, representing data in
-                  visualization is really important in modern web development
-                  trend.
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-        </Grid>
-      </div>
-      <div>add material skeliton to cards</div>
-      <h2>projects</h2>
+      <SkillsAndServiceCards />
     </div>
   );
 };

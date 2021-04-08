@@ -41,7 +41,9 @@ export default function ExperienceSection() {
             </div>
           </AccordionSummary>
           <AccordionDetails className={classes.details}>
-            <div className={classes.column}>{obj.description}</div>
+            <div className={clsx(classes.column, classes.desc)}>
+              {obj.description}
+            </div>
             <div className={classes.column}>
               {obj.skills.map((skill, sid) => (
                 <Chip label={skill} className={classes.chip} />

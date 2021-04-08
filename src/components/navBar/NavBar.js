@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { withRouter } from "react-router-dom";
 import {
   AppBar,
@@ -22,13 +22,12 @@ import {
   PersonRounded,
   CallRounded,
 } from "@material-ui/icons";
-
 import useStyle from "./NavBar.styles";
 
 const Navigation = (props) => {
   const classes = useStyle();
   const [open, setOpen] = useState(false);
-  const [value, setValue] = useState(0);
+  const [activeTabIndex, setActiveTabIndex] = useState(0);
   const [navlist] = useState(["Home", "About", "Contact"]);
   const theme = useTheme();
   const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg"));
@@ -45,16 +44,27 @@ const Navigation = (props) => {
 
     if (!isLargeScreen) {
       setOpen(!open);
-      setValue(idx);
+      setActiveTabIndex(idx);
     }
   };
   const handleChange = (event, newValue) => {
-    setValue(newValue);
+    setActiveTabIndex(newValue);
 
     let url = navlist[newValue];
     HandleRoute(url);
   };
 
+  useEffect(() => {
+    let path = window.location.pathname;
+    if (path.length === 1) {
+      setActiveTabIndex(0);
+    } else {
+      let activeTabIndex = navlist
+        .map((e) => e.toLowerCase())
+        .indexOf(path.slice(1));
+      setActiveTabIndex(activeTabIndex);
+    }
+  }, []);
   return (
     <AppBar color="primary" position="static" className={classes.appbar}>
       <Toolbar disableGutters={false} variant="dense">
@@ -66,7 +76,7 @@ const Navigation = (props) => {
             <div style={{ flex: 1 }}></div>
             <div>
               <Tabs
-                value={value}
+                value={activeTabIndex}
                 onChange={handleChange}
                 // indicatorColor="secondary"
                 textColor="inherit"

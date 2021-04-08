@@ -1,14 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Container, Typography, Fade, Chip, Paper } from "@material-ui/core";
-import {
-  DriveEtaRounded,
-  PhotoCameraRounded,
-  FitnessCenterRounded,
-} from "@material-ui/icons";
 import { fetchActions } from "../../redux";
 import ExperienceSection from "../../components/experienceSection";
-import Carousel from "../../components/carousel";
+// import Carousel from "../../components/carousel";
 import useStyles from "./about.styles";
 
 import "./about.styles";
@@ -17,13 +12,13 @@ const About = (props: any) => {
   const [skills, setSkills] = useState([
     "html5",
     "css3",
-    "sass",
     "javascript",
     "react.js",
     "redux",
     "d3.js",
     "highcharts",
     "es6/7",
+    "sass",
     "Bootstrap",
     "Material ui",
   ]);
@@ -51,7 +46,6 @@ const About = (props: any) => {
   const aboutData = useSelector((state) => state);
   const dispatch = useDispatch();
   const classes = useStyles();
-  console.log(aboutData);
   const clickMe = () => {
     dispatch(fetchActions());
   };
@@ -60,7 +54,6 @@ const About = (props: any) => {
     dispatch(fetchActions());
   }, [dispatch]);
 
-  console.log({ aboutData });
   return (
     <div
       className="about"
@@ -96,9 +89,9 @@ const About = (props: any) => {
               {/* <PhotoCameraRounded color="secondary" /> */}, or in the gym
               {/* <FitnessCenterRounded color="secondary" /> */}
             </p>
-            <div>
+            {/* <div>
               <button>Get in touch</button>
-            </div>
+            </div> */}
           </section>
 
           <section className={classes.section}>
@@ -146,11 +139,11 @@ const About = (props: any) => {
                 <Paper key={id} elevation={1} className={classes.paper}>
                   <div className={classes.educationHolder}>
                     <span>Institution </span>
-                    <span style={{ flex: 2 }}>{edu.institute}</span>
+                    <span>{edu.institute}</span>
                   </div>
                   <div className={classes.educationHolder}>
                     <span>Course </span>
-                    <span style={{ flex: 2 }}>
+                    <span>
                       {edu.branch
                         ? `${edu.course} (${edu.branch})`
                         : `${edu.course}`}
@@ -158,14 +151,14 @@ const About = (props: any) => {
                   </div>
                   <div className={classes.educationHolder}>
                     <span>Period </span>
-                    <span style={{ flex: 2 }}>{edu.year}</span>
+                    <span>{edu.year}</span>
                   </div>
                 </Paper>
               ))}
             </div>
           </section>
 
-          <section className={classes.section}>
+          {/* <section className={classes.section}>
             <Typography
               variant="h4"
               color="primary"
@@ -176,7 +169,7 @@ const About = (props: any) => {
             <div>
               <Carousel />
             </div>
-          </section>
+          </section> */}
         </Container>
       </Fade>
     </div>
