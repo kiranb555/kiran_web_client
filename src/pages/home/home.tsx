@@ -1,8 +1,10 @@
 import React, { FC, useState } from "react";
 import { withRouter } from "react-router-dom";
-import { Button, Typography, Snackbar } from "@material-ui/core";
+import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
+import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert, { AlertProps } from "@material-ui/lab/Alert";
-import { KeyboardArrowDownOutlined } from "@material-ui/icons";
+import KeyboardArrowDownOutlined from "@material-ui/icons/KeyboardArrowDownOutlined";
 import SkillsAndServiceCards from "../../components/skillsAndServiceCards";
 import useStyles from "./home.styles.js";
 

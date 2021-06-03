@@ -4,11 +4,9 @@ const useStyles = makeStyles((theme) =>
   createStyles({
     section: {
       margin: "20px 0",
-      // border: "1px solid red",
     },
     section__header: {
       margin: "25px 0 20px 0",
-      // borderBottom: "1px solid red",
       "section__header::after": {
         content: "",
         borderBottom: "1px solid red",
