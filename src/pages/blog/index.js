@@ -1,3 +1,2 @@
-import Blog from "./blog.tsx";
+export { default } from "./blog.tsx";
 
-export default Blog;

@@ -7,7 +7,7 @@ export default makeStyles((theme) => ({
   banner: {
     minHeight: "300px",
     height: "35vh",
-    background: `linear-gradient(to bottom, ${theme.palette.primary.light}, ${theme.palette.primary.light})`,
+    background: `linear-gradient(-213deg, #5e31dc 0%, #3155dc 100%)`,
     // background: theme.palette.primary.light,
     color: theme.palette.primary.contrastText,
     borderRight: "none",

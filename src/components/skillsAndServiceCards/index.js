@@ -1,3 +1,2 @@
-import SkillsAndServiceCards from "./SkillsAndServiceCards";
+export { default } from "./SkillsAndServiceCards";
 
-export default SkillsAndServiceCards;

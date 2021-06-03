@@ -1,3 +1,2 @@
-import Contact from "./contact.tsx";
+export { default } from "./contact.tsx";
 
-export default Contact;

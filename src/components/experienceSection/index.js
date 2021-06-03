@@ -1,3 +1,1 @@
-import ExperienceSection from "./ExperienceSection";
-
-export default ExperienceSection;
+export { default } from "./ExperienceSection";

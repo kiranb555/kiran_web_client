@@ -5,9 +5,8 @@ import AccordionDetails from "@material-ui/core/AccordionDetails";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import Chip from "@material-ui/core/Chip";
+import Chip from "../Chip";
 import Divider from "@material-ui/core/Divider";
-
 import useStyles from "./ExperienceSection.styles";
 import data from "./data.json";
 
@@ -46,7 +45,13 @@ export default function ExperienceSection() {
             </div>
             <div className={classes.column}>
               {obj.skills.map((skill, sid) => (
-                <Chip label={skill} className={classes.chip} />
+                <Chip 
+                  key={sid}
+									label={skill}
+									variant='filled'
+									color='primary'
+									size='small'
+                />
               ))}
             </div>
             <div className={clsx(classes.column, classes.helper)}>

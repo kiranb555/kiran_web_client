@@ -1,7 +1,7 @@
 const AppliedTheme = {
   mypalette: {
     primary: {
-      main: "#764abc",
+      main: "#3155dc",
     },
   },
 };
