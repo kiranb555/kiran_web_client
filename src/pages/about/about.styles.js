@@ -1,4 +1,5 @@
 import { makeStyles, createStyles } from "@material-ui/styles";
+import Styled from 'styled-components';
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -42,4 +43,15 @@ const useStyles = makeStyles((theme) =>
   })
 );
 
+export const ChipHolder = Styled.div`
+  & button{
+    margin-right : 10px;
+    margin-bottom : 10px;
+  }
+`;
+
+export const Header = Styled.h2`
+  /* color : #3155dc; */
+  margin: 25px 0 20px 0;
+`;
 export default useStyles;

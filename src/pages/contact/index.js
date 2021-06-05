@@ -1,2 +1,1 @@
-export { default } from "./contact.tsx";
-
+export { default } from './contact.jsx';

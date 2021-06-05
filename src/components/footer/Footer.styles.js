@@ -1,12 +1,25 @@
-import { makeStyles } from "@material-ui/core/styles";
+import Styled from 'styled-components';
 
-export default makeStyles((theme) => ({
-  footer: {
-    width: "100%",
-    marginTop: "auto",
+export const FooterWrapper = Styled.footer`
+    width: 100%;
+    margin-top: auto;
+    padding: 20px 0;
+    color: #ffffffb3;
+    background-color: #231c42;
+    font-size : 1.2rem;
 
-    padding: "20px 0",
-    color: theme.palette.common.white,
-    backgroundColor: theme.palette.common.black,
-  },
-}));
+    & > div{
+      display : flex;
+      justify-content : center;
+      align-items : center;
+      margin: 1.6rem 0;
+      & > svg{
+        margin-right : 1.2rem;
+        cursor : pointer;
+
+        & :hover{
+          color : #ffffff;
+        }
+      }
+    }
+`;

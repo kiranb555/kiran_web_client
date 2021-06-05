@@ -4,8 +4,8 @@
 		"I love frontend web development and offcourse javascript.currently learning backend technologies.I always strive to learn new things.",
 		"Apart from being a tech geek, you can find me travelling, doing photography, or in the gym "
 	],
-    "skills" : [
-        "html5",
+	"skills": [
+		"html5",
 		"css3",
 		"javascript",
 		"react.js",
@@ -14,29 +14,26 @@
 		"highcharts",
 		"es6/7",
 		"sass",
-        "styled components",
+		"styled components",
 		"Bootstrap",
 		"Material ui",
-        "react testing"
-    ],
-    "education" : [
+		"react testing"
+	],
+	"education": [
 		{
 			"institute": "K.S.School of Engineering and Management",
-			"year": "2013 - 2018",
-			"course": "B.E",
-			"branch": "CSE"
+			"year": "2013 - 2018 ( CSE )",
+			"course": "B.E"
 		},
 		{
 			"institute": "National College",
-			"year": "2011 - 2013",
-			"course": "Pre-University College",
-			"branch": "PCMB"
+			"year": "2011 - 2013 ( PCMB )",
+			"course": "Pre-University College"
 		},
 		{
 			"institute": "National High School",
 			"year": "2008 - 2011",
-			"course": "Higher Primary School",
-			"branch": ""
+			"course": "Higher Primary School"
 		}
 	]
 }

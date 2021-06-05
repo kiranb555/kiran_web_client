@@ -1,27 +1,15 @@
 import React from 'react';
-// import { useSelector, useDispatch } from 'react-redux';
-import { Container, Typography, Fade, Paper } from '@material-ui/core';
-// import { fetchActions } from '../../redux';
+import { Container, Fade } from '@material-ui/core';
 import ExperienceSection from '../../components/experienceSection';
-// import Carousel from "../../components/carousel";
 import useStyles from './about.styles';
 import Chip from '../../components/Chip';
 import './about.styles';
 import data from './data.json';
+import { ChipHolder, Header } from './about.styles';
+import PaperTable from '../../components/PaperTable';
 
 const About = () => {
-	
-	// const aboutData = useSelector((state) => state);
-	// const dispatch = useDispatch();
 	const classes = useStyles();
-	// const clickMe = () => {
-	// 	dispatch(fetchActions());
-	// };
-
-	// useEffect(() => {
-	// 	dispatch(fetchActions());
-	// }, [dispatch]);
-
 	return (
 		<div
 			className='about'
@@ -32,82 +20,39 @@ const About = () => {
 			<Fade in={true}>
 				<Container maxWidth='md'>
 					<section className={classes.section}>
-						<Typography
-							variant='h4'
-							color='primary'
-							className={classes.section__header}
-						>
-							About
-						</Typography>
-            {
-              data.about.map((para, index) => <p index={index} dangerouslySetInnerHTML={{__html: para}}></p>)
-            }
+						<Header>About</Header>
+						{data.about.map((para, index) => (
+							<p
+								index={index}
+								dangerouslySetInnerHTML={{ __html: para }}
+							></p>
+						))}
 					</section>
 
 					<section className={classes.section}>
-						<Typography
-							variant='h4'
-							color='primary'
-							className={classes.section__header}
-						>
-							Skills
-						</Typography>
-						<div>
+						<Header>Skills</Header>
+						<ChipHolder>
 							{data.skills.map((skill, id) => (
 								<Chip
 									key={id}
-									label={skill}
-									variant='outlined'
-									color='primary'
+									label={skill.toUpperCase()}
+									variant='filled'
 									size='medium'
 								/>
 							))}
-						</div>
+						</ChipHolder>
 					</section>
 
 					<section className={classes.section}>
-						<Typography
-							variant='h4'
-							color='primary'
-							className={classes.section__header}
-						>
-							Experience
-						</Typography>
+						<Header>Experience</Header>
 						<ExperienceSection />
 					</section>
 
 					<section className={classes.section}>
-						<Typography
-							variant='h4'
-							color='primary'
-							className={classes.section__header}
-						>
-							Education
-						</Typography>
+						<Header>Education</Header>
 						<div>
 							{data.education.map((edu, id) => (
-								<Paper
-									key={id}
-									elevation={1}
-									className={classes.paper}
-								>
-									<div className={classes.educationHolder}>
-										<span>Institution </span>
-										<span>{edu.institute}</span>
-									</div>
-									<div className={classes.educationHolder}>
-										<span>Course </span>
-										<span>
-											{edu.branch
-												? `${edu.course} (${edu.branch})`
-												: `${edu.course}`}
-										</span>
-									</div>
-									<div className={classes.educationHolder}>
-										<span>Period </span>
-										<span>{edu.year}</span>
-									</div>
-								</Paper>
+								<PaperTable key={id} data={edu} />
 							))}
 						</div>
 					</section>
