@@ -9,8 +9,8 @@ import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import AppliedTheme from './styles/theme.styles';
 import useStyle from './App.styles';
 import GlobalStyles from './styles/Global.styles';
-
-import NavBar from './components/navBar';
+import { ViewPortProvider } from './components/ViewportProvider';
+import NavBar from './components/navBar/NavBar.jsx';
 import Error from './pages/404';
 import Footer from './components/footer';
 
@@ -34,7 +34,9 @@ function App() {
 				<ThemeProvider theme={appliedTheme}>
 					<CssBaseline />
 					<GlobalStyles />
-					<NavBar />
+					<ViewPortProvider>
+						<NavBar />
+					</ViewPortProvider>
 					<main className={classes.App}>
 						<Suspense
 							fallback={
@@ -44,9 +46,14 @@ function App() {
 							}
 						>
 							<Switch>
-								<Route path='/' exact component={Home} />
-								<Route path='/about' component={About} />
-								<Route path='/contact' component={Contact} />
+								<Route exact path='/' component={Home} />
+								<Route exact path='/home' component={Home} />
+								<Route exact path='/about' component={About} />
+								<Route
+									exact
+									path='/contact'
+									component={Contact}
+								/>
 								<Route component={Error} />
 							</Switch>
 						</Suspense>

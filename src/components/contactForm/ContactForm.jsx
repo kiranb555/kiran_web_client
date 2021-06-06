@@ -87,7 +87,6 @@ const ContactForm = () => {
 							className={classes.contactSubmitBtnHolder}
 						>
 							<Button
-								as='link'
 								variant='contained'
 								size='large'
 								type='submit'
