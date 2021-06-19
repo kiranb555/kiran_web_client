@@ -9,6 +9,7 @@ export const PaperTableWrapper = Styled.div`
 
     .paper__holder {
          display : flex;
+         padding:.5rem 0;
     & > div {
         &:nth-child(1) {
             flex : 1;
@@ -18,6 +19,9 @@ export const PaperTableWrapper = Styled.div`
         &:nth-child(2) {
             flex : 2
         }
+    }
+    .bold{
+        font-weight: 600;
     }
 }
 `;

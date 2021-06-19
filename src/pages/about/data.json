@@ -1,7 +1,7 @@
 {
 	"about": [
-		"Hi, i'm <span>Kiran</span>, from Bangalore, India.Professionally i am a Software Engineer, currently working in a awesome startup.I'm passionate about bringing both the technical and visual aspects of digital products in to life.",
-		"I love frontend web development and offcourse javascript.currently learning backend technologies.I always strive to learn new things.",
+		"Hi, i'm <span>Kiran</span> 👋, from Bangalore, India. Professionally i am a Software Engineer, currently working in a awesome startup. I'm passionate about bringing both the technical and visual aspects of digital products in to life.",
+		"I love frontend web development and offcourse javascript. Currently learning backend technologies. I always strive to learn new things.",
 		"Apart from being a tech geek, you can find me travelling, doing photography, or in the gym "
 	],
 	"skills": [
@@ -22,13 +22,13 @@
 	"education": [
 		{
 			"institute": "K.S.School of Engineering and Management",
-			"year": "2013 - 2018 ( CSE )",
-			"course": "B.E"
+			"year": "2013 - 2018",
+			"course": "B.E ( CSE )"
 		},
 		{
 			"institute": "National College",
-			"year": "2011 - 2013 ( PCMB )",
-			"course": "Pre-University College"
+			"year": "2011 - 2013",
+			"course": "Pre-University College ( PCMB )"
 		},
 		{
 			"institute": "National High School",

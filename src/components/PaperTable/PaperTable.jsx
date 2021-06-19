@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
-import { PaperTableWrapper, ChipWrapper } from './PaperTable.style';
 import Chip from '../Chip';
+import { PaperTableWrapper, ChipWrapper } from './PaperTable.style';
 
 const PaperTable = ({ data }) => {
 	return (
@@ -21,7 +21,16 @@ const PaperTable = ({ data }) => {
 									))}
 								</ChipWrapper>
 							) : (
-								<div>{data[key]}</div>
+								<div
+									className={
+										key.includes('institute') ||
+										key.includes('company')
+											? 'bold'
+											: ''
+									}
+								>
+									{data[key]}
+								</div>
 							)}
 						</div>
 				  ))

@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import { StyledButton, StyledLink } from './Button.style';
 
-const Button = ({ as, label, href, size, variant, type }) => {
+const Button = ({ as, label, href, size, variant, type , ...props}) => {
 	return as && as.toLowerCase() === 'link' ? (
-		<StyledLink href={href} size={size} variant={variant}>
+		<StyledLink href={href} size={size} variant={variant} target="_blank" {...props}>
 			{label}
 		</StyledLink>
 	) : (

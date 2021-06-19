@@ -1,16 +1,14 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { Grid, TextField, Paper } from '@material-ui/core';
 import {
 	formInputHandler,
 	forSubmitHandler,
 } from '../../redux/contact/contactActions';
-import useStyles from './ContactForm.styles.js';
 import Button from '../Button';
+import { ContactWrapper, Row, InputField } from './ContactForm.styles';
 
 const ContactForm = () => {
 	const dispatch = useDispatch();
 	const formData = useSelector((state) => state.contact.formData);
-	const classes = useStyles();
 
 	const handleChange = (e) => {
 		let { name, value } = e.target;
@@ -24,12 +22,13 @@ const ContactForm = () => {
 		dispatch(forSubmitHandler());
 	};
 	return (
-		<Paper className={classes.contactPaper}>
-			<div className={classes.contact}>
+		<ContactWrapper>
+			<div>
 				<form onSubmit={formSubmitHandler}>
-					<Grid container spacing={5} alignContent='center'>
-						<Grid item md={6} sm={12} xs={12}>
-							<TextField
+					<Row>
+						<div>
+							<label>First name</label>
+							<InputField
 								label='First Name'
 								name='first_name'
 								value={formData.first_name}
@@ -37,18 +36,22 @@ const ContactForm = () => {
 								fullWidth
 								required
 							/>
-						</Grid>
-						<Grid item md={6} sm={12} xs={12}>
-							<TextField
+						</div>
+						<div>
+							<label>Second name</label>
+							<InputField
 								label='Second Name'
 								name='second_name'
 								value={formData.second_name}
 								onChange={handleChange}
 								fullWidth
 							/>
-						</Grid>
-						<Grid item md={12} sm={12} xs={12}>
-							<TextField
+						</div>
+					</Row>
+					<Row>
+						<div>
+							<label>Phone</label>
+							<InputField
 								label='Phone'
 								type='tel'
 								name='phone'
@@ -56,9 +59,10 @@ const ContactForm = () => {
 								onChange={handleChange}
 								fullWidth
 							/>
-						</Grid>
-						<Grid item md={12} sm={12} xs={12}>
-							<TextField
+						</div>
+						<div>
+							<label>email</label>
+							<InputField
 								label='Email'
 								type='email'
 								name='email'
@@ -67,36 +71,31 @@ const ContactForm = () => {
 								fullWidth
 								required
 							/>
-						</Grid>
-						<Grid item md={12} sm={12} xs={12}>
-							<TextField
-								label='Message'
-								name='message'
-								multiline
-								value={formData.message}
-								onChange={handleChange}
-								fullWidth
-								spellCheck
-							/>
-						</Grid>
-						<Grid
-							item
-							md={12}
-							sm={12}
-							xs={12}
-							className={classes.contactSubmitBtnHolder}
-						>
-							<Button
-								variant='contained'
-								size='large'
-								type='submit'
-								label='SUBMIT'
-							/>
-						</Grid>
-					</Grid>
+						</div>
+					</Row>
+					<div>
+						<label>message</label>
+						<InputField
+							label='Message'
+							name='message'
+							multiline
+							value={formData.message}
+							onChange={handleChange}
+							fullWidth
+							spellCheck
+						/>
+					</div>
+					<div>
+						<Button
+							variant='contained'
+							size='large'
+							type='submit'
+							label='SUBMIT'
+						/>
+					</div>
 				</form>
 			</div>
-		</Paper>
+		</ContactWrapper>
 	);
 };
 

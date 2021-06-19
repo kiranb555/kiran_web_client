@@ -1,16 +1,8 @@
-import { makeStyles, createStyles } from "@material-ui/core/styles";
+import styled from 'styled-components';
 
-export default makeStyles((theme) =>
-  createStyles({
-    heading: {
-      padding: "40px 0 20px 0",
-    },
-    contactHolder: {
-      height: "100%",
-      display: "flex",
-      // justifyContent: "center",
-      alignItems: "center",
-      flexDirection: "column",
-    },
-  })
-);
+export const ContactWrapper = styled.section`
+	max-width: 980px;
+	width: 100%;
+	padding: 1rem 1rem 2rem;
+	margin: 0 auto;
+`;

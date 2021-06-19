@@ -1,16 +1,16 @@
-import { makeStyles } from "@material-ui/core/styles";
+import styled from 'styled-components';
 
-export default makeStyles((theme) => ({
-  error_404: {
-    display: "flex",
-    justifyContent: "center",
-    width: "500px",
-  },
-  [theme.breakpoints.down("sm")]: {
-    error_404: {
-      display: "flex",
-      justifyContent: "center",
-      width: "300px",
-    },
-  },
-}));
+export const ErrorWrapper = styled.div`
+	display: flex;
+	justify-content: center;
+
+	& > div {
+		width: 500px;
+	}
+
+	@media only screen and (max-width: 600px) {
+		& > div {
+			width: 300px;
+		}
+	}
+`;

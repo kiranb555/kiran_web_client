@@ -12,13 +12,13 @@ const baseStyle = css`
 	border-radius: ${(props) =>
 		props.variant === 'outlined' &&
 		(props.size === 'large' || props.size === 'medium')
-			? '1rem'
-			: '12px'};
+			? '1.2rem'
+			: '1.5rem'};
 	background-color: ${(props) =>
 		props.variant === 'filled'
 			? 'pink'
 			: props.variant === 'contained'
-			? 'green'
+			? '#17a974'
 			: 'transparent'};
 	color: #ffffff;
 	cursor: pointer;

@@ -1,23 +1,32 @@
-import { makeStyles } from "@material-ui/core/styles";
+import styled from 'styled-components';
 
-export default makeStyles((theme) => ({
-  homePG: {
-    backgroundColor: theme.palette.primary,
-  },
-  banner: {
-    minHeight: "300px",
-    height: "35vh",
-    background: `linear-gradient(-213deg, #5e31dc 0%, #3155dc 100%)`,
-    // background: theme.palette.primary.light,
-    color: theme.palette.primary.contrastText,
-    borderRight: "none",
-    borderLeft: "none",
-    borderTop: "none",
-    // clipPath: "polygon(0 0, 100% 0%, 100% 66%, 0 100%)",
-    textAlign: "center",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    flexDirection: "column",
-  },
-}));
+export const HomePageWrapper = styled.div`
+	padding-bottom: 2rem;
+`;
+
+export const BannerWrapper = styled.div`
+	min-height: 300px;
+	height: 35vh;
+	background: linear-gradient(-213deg, #5e31dc 0%, #3155dc 100%);
+	color: #fff;
+	border-right: none;
+	border-left: none;
+	border-top: none;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+`;
+
+export const BannerTitle = styled.h2`
+	font-size: 2.5rem; ;
+`;
+
+export const BannerSubtitle = styled.div`
+	font-size: 1rem; ;
+`;
+
+export const BannerButtonWrapper = styled.div`
+	margin-top: 1.5rem;
+`;
