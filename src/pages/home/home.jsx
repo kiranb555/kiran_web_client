@@ -8,6 +8,7 @@ import {
 import Button from '../../components/Button';
 import Projects from '../../components/Projects';
 import { useViewPort } from '../../components/ViewportProvider/ViewportProvider';
+import { HOME_GREETING, JOB_ROLE } from '../../constants';
 
 const Home = (props) => {
 	const { width } = useViewPort();
@@ -16,8 +17,8 @@ const Home = (props) => {
 	return (
 		<HomePageWrapper>
 			<BannerWrapper>
-				<BannerTitle>G'day, I'm Kiran </BannerTitle>
-				<BannerSubtitle>Front-end Developer </BannerSubtitle>
+				<BannerTitle>{HOME_GREETING} </BannerTitle>
+				<BannerSubtitle>{JOB_ROLE}</BannerSubtitle>
 				<BannerButtonWrapper>
 					<Button
 						as='link'

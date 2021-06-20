@@ -3,6 +3,24 @@ import styled from 'styled-components';
 export const ContactWrapper = styled.section`
 	max-width: 980px;
 	width: 100%;
-	padding: 1rem 1rem 2rem;
+	padding: 2rem;
 	margin: 0 auto;
+
+	& > div > h2 {
+		margin-bottom: 2rem;
+	}
+
+	@media screen and (max-width: 375px) {
+		max-width: calc(375px - 5rem);
+		padding: 2rem 0rem;
+	}
+	@media screen and (min-width: 425px) and (max-width: 475px) {
+		max-width: 350px;
+	}
+	@media screen and (min-width: 600px) and (max-width: 768px) {
+		max-width: 500px;
+	}
+	@media screen and (min-width: 1024px) and (max-width: 1440px) {
+		max-width: 800px;
+	}
 `;

@@ -8,14 +8,14 @@ const ChipWrapper = Styled.button`
 			? '8px 14px'
 			: '5px 12px'};
     border : ${(props) =>
-		props.variant === 'outlined' ? '1px solid red' : '0px'};
+		props.variant === 'outlined' ? '1px solid #231c42' : '0px'};
     border-radius : ${(props) =>
 		props.variant === 'outlined' &&
 		(props.size === 'large' || props.size === 'medium')
 			? '14px'
 			: '12px'};
     background-color : ${(props) =>
-		props.variant === 'filled' ? 'pink' : 'transparent'};
+		props.variant === 'filled' ? '' : 'transparent'};
     cursor : ${(props) => (props.cursor ? 'pointer' : '')}
 `;
 

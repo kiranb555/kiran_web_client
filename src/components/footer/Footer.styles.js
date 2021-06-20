@@ -1,25 +1,27 @@
-import Styled from 'styled-components';
+import styled from 'styled-components';
 
-export const FooterWrapper = Styled.footer`
-    width: 100%;
-    margin-top: auto;
-    padding: .6rem 0;
-    color: #ffffffb3;
-    background-color: #231c42;
-    font-size : 1.2rem;
+export const FooterWrapper = styled.footer`
+	${({ theme }) => `
+	width: 100%;
+	margin-top: auto;
+	padding: ${theme.sizing.size_10} ${theme.sizing.size_0};
+	color: ${theme.color.scaffold.greyscale.dark_mid_grey};
+	background-color: ${theme.color.background.ternary};
+	font-size: ${theme.sizing.size_20} ;
 
-    & > div{
-      display : flex;
-      justify-content : center;
-      align-items : center;
-      margin: .6rem 0;
-      & > svg{
-        margin-right : 1.2rem;
-        cursor : pointer;
+	& > div {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: ${theme.sizing.size_10} ${theme.sizing.size_0};
+		& > svg {
+			margin-right: ${theme.sizing.size_20};
+			cursor: pointer;
 
-        & :hover{
-          color : #ffffff;
-        }
-      }
-    }
+			& :hover {
+				color: ${theme.color.icon.interactive};
+			}
+		}
+	}
+`}
 `;

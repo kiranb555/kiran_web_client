@@ -1,9 +1,9 @@
-import React, { lazy, Suspense } from 'react';
-import 'fontsource-roboto';
+import { lazy, Suspense } from 'react';
 import { Provider } from 'react-redux';
-import store from './redux/store';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import GlobalStyles from './styles/Global.styles';
+import 'fontsource-roboto';
+import store from './redux/store';
+import Theme from './styles/Theme';
 import { MainWrapper } from './App.styles';
 import { ViewPortProvider } from './components/ViewportProvider';
 import NavBar from './components/navBar/NavBar.jsx';
@@ -18,26 +18,35 @@ function App() {
 	return (
 		<Router>
 			<Provider store={store}>
-				<GlobalStyles />
-				<ViewPortProvider>
-					<NavBar />
-					<MainWrapper>
-						<Suspense fallback={<div>Loading...</div>}>
-							<Switch>
-								<Route exact path='/' component={Home} />
-								<Route exact path='/home' component={Home} />
-								<Route exact path='/about' component={About} />
-								<Route
-									exact
-									path='/contact'
-									component={Contact}
-								/>
-								<Route component={Error} />
-							</Switch>
-						</Suspense>
-						<Footer />
-					</MainWrapper>
-				</ViewPortProvider>
+				<Theme>
+					<ViewPortProvider>
+						<NavBar />
+						<MainWrapper>
+							<Suspense fallback={<div>Loading...</div>}>
+								<Switch>
+									<Route exact path='/' component={Home} />
+									<Route
+										exact
+										path='/home'
+										component={Home}
+									/>
+									<Route
+										exact
+										path='/about'
+										component={About}
+									/>
+									<Route
+										exact
+										path='/contact'
+										component={Contact}
+									/>
+									<Route component={Error} />
+								</Switch>
+							</Suspense>
+							<Footer />
+						</MainWrapper>
+					</ViewPortProvider>
+				</Theme>
 			</Provider>
 		</Router>
 	);

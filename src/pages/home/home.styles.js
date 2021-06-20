@@ -1,14 +1,15 @@
 import styled from 'styled-components';
 
 export const HomePageWrapper = styled.div`
-	padding-bottom: 2rem;
+	padding-bottom: ${({ theme }) => theme.sizing.size_32};
 `;
 
 export const BannerWrapper = styled.div`
-	min-height: 300px;
-	height: 35vh;
-	background: linear-gradient(-213deg, #5e31dc 0%, #3155dc 100%);
-	color: #fff;
+	${({ theme }) => `
+	min-height: ${theme.sizing.size_300};
+	height: ${theme.sizing.size_35vh};
+	background: linear-gradient(-213deg, #5e31dc 0%, ${theme.color.background.primary} 100%);
+	color: ${theme.color.scaffold.text.primary};
 	border-right: none;
 	border-left: none;
 	border-top: none;
@@ -17,16 +18,18 @@ export const BannerWrapper = styled.div`
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+`}
 `;
 
 export const BannerTitle = styled.h2`
-	font-size: 2.5rem; ;
+	font-size: ${({ theme }) => theme.sizing.size_40};
 `;
 
 export const BannerSubtitle = styled.div`
-	font-size: 1rem; ;
+	font-size: ${({ theme }) => theme.sizing.size_16};
+	margin-top: ${({ theme }) => theme.sizing.size_10};
 `;
 
 export const BannerButtonWrapper = styled.div`
-	margin-top: 1.5rem;
+	margin-top: ${({ theme }) => theme.sizing.size_24};
 `;

@@ -15,7 +15,7 @@ const PaperTable = ({ data }) => {
 										<Chip
 											key={id}
 											label={item.toUpperCase()}
-											variant='filled'
+											variant='outlined'
 											size='small'
 										/>
 									))}

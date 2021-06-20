@@ -8,7 +8,7 @@ export const NavWrapper = styled.header`
 		z-index: 1400;
 		height: 3rem;
 		width: 100%;
-		background-color: rgba(0, 0, 0, 0.8);
+		background-color: #231c42;
 		backdrop-filter: blur(2rem);
 		color: #fff;
 		text-transform: uppercase;
@@ -45,6 +45,7 @@ export const NavWrapper = styled.header`
 	}
 	.nav-list-small {
 		visibility: hidden;
+		box-sizing: border-box;
 	}
 	.nav-item {
 		margin-right: 1rem;

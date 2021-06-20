@@ -12,6 +12,7 @@ const About = () => {
 				{data.about.map((para, index) => (
 					<p
 						index={index}
+						key={index}
 						dangerouslySetInnerHTML={{ __html: para }}
 					></p>
 				))}
@@ -24,7 +25,7 @@ const About = () => {
 						<Chip
 							key={id}
 							label={skill.toUpperCase()}
-							variant='filled'
+							variant='outlined'
 							size='medium'
 						/>
 					))}

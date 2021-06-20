@@ -1,16 +1,18 @@
 import styled from 'styled-components';
 
 export const ErrorWrapper = styled.div`
+	${({ theme }) => `
 	display: flex;
 	justify-content: center;
 
 	& > div {
-		width: 500px;
+		width: ${theme.sizing.size_500};
 	}
 
-	@media only screen and (max-width: 600px) {
+	@media only screen and (max-width: ${theme.layout.media_query.sm_max}) {
 		& > div {
-			width: 300px;
+			width: ${theme.layout.media_query.sm_min}
 		}
 	}
+	`}
 `;

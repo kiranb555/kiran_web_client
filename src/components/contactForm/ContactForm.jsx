@@ -23,78 +23,83 @@ const ContactForm = () => {
 	};
 	return (
 		<ContactWrapper>
-			<div>
-				<form onSubmit={formSubmitHandler}>
-					<Row>
-						<div>
-							<label>First name</label>
-							<InputField
-								label='First Name'
-								name='first_name'
-								value={formData.first_name}
-								onChange={handleChange}
-								fullWidth
-								required
-							/>
-						</div>
-						<div>
-							<label>Second name</label>
-							<InputField
-								label='Second Name'
-								name='second_name'
-								value={formData.second_name}
-								onChange={handleChange}
-								fullWidth
-							/>
-						</div>
-					</Row>
-					<Row>
-						<div>
-							<label>Phone</label>
-							<InputField
-								label='Phone'
-								type='tel'
-								name='phone'
-								value={formData.phone}
-								onChange={handleChange}
-								fullWidth
-							/>
-						</div>
-						<div>
-							<label>email</label>
-							<InputField
-								label='Email'
-								type='email'
-								name='email'
-								value={formData.email}
-								onChange={handleChange}
-								fullWidth
-								required
-							/>
-						</div>
-					</Row>
+			<form onSubmit={formSubmitHandler}>
+				<Row>
+					<div>
+						<label>First name</label>
+						<InputField
+							label='First Name'
+							placeholder='First Name'
+							value={formData.first_name}
+							onChange={handleChange}
+							fullWidth
+							required
+						/>
+					</div>
+					<div>
+						<label>Second name</label>
+						<InputField
+							label='Second Name'
+							placeholder='Second Name'
+							value={formData.second_name}
+							onChange={handleChange}
+							fullWidth
+						/>
+					</div>
+				</Row>
+				<Row>
+					<div>
+						<label>Phone</label>
+						<InputField
+							label='Phone'
+							type='tel'
+							placeholder='Phone'
+							value={formData.phone}
+							onChange={handleChange}
+							fullWidth
+						/>
+					</div>
+					<div>
+						<label>email</label>
+						<InputField
+							label='Email'
+							type='email'
+							placeholder='Email'
+							value={formData.email}
+							onChange={handleChange}
+							fullWidth
+							required
+						/>
+					</div>
+				</Row>
+				<Row>
 					<div>
 						<label>message</label>
 						<InputField
 							label='Message'
-							name='message'
+							type='text'
+							placeholder='Message'
 							multiline
 							value={formData.message}
 							onChange={handleChange}
 							fullWidth
 							spellCheck
 						/>
-					</div>
-					<div>
-						<Button
-							variant='contained'
-							size='large'
-							type='submit'
-							label='SUBMIT'
-						/>
-					</div>
-				</form>
-			</div>
+					</div>{' '}
+				</Row>
+				<div>
+					<Button
+						variant='contained'
+						size='large'
+						type='submit'
+						label='SUBMIT'
+						style={{
+							width: '200px',
+							fontWeight: 'bold',
+						}}
+					/>
+				</div>
+			</form>
 		</ContactWrapper>
 	);
 };
