@@ -7,6 +7,7 @@ export const ContactWrapper = styled.section`
 	margin: 0 auto;
 
 	& > div > h2 {
+		font-size: 30px;
 		margin-bottom: 2rem;
 	}
 

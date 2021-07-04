@@ -31,7 +31,10 @@ export const NavWrapper = styled.header`
 		transition: opacity 0.5s;
 	}
 	a:hover {
-		opacity: 0.7;
+		opacity: 0.9;
+	}
+	a.active-nav{
+		color: #17a974;
 	}
 	.nav {
 		height: 100%;

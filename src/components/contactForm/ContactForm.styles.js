@@ -21,6 +21,9 @@ export const ContactWrapper = styled.div`
 				padding-top: 1rem;
 			}
 		}
+		button{
+			width: 200px;
+		}
 	}
 `;
 

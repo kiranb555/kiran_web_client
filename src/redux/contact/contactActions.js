@@ -39,7 +39,6 @@ const formReset = () => {
 
 export const forSubmitHandler = () => {
   return (dispatch) => {
-    console.log("started posting...");
     dispatch(formSubmit());
     // add post data url
     axios
@@ -51,7 +50,6 @@ export const forSubmitHandler = () => {
         },
       })
       .then((response) => {
-        console.log(response);
         dispatch(formSubmitSuccess());
         // resetting form data
         setTimeout(() => dispatch(formReset()), 6000);

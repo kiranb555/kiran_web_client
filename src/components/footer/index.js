@@ -1,2 +1,2 @@
-export { default } from "./Footer.tsx";
+export { default } from "./Footer.jsx";
 

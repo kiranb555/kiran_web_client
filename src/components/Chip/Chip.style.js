@@ -15,7 +15,7 @@ const ChipWrapper = Styled.button`
 			? '14px'
 			: '12px'};
     background-color : ${(props) =>
-		props.variant === 'filled' ? '' : 'transparent'};
+		props.variant === 'filled' ? '' : '#a2ddc7'};
     cursor : ${(props) => (props.cursor ? 'pointer' : '')}
 `;
 

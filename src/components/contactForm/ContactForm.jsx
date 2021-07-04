@@ -5,6 +5,7 @@ import {
 } from '../../redux/contact/contactActions';
 import Button from '../Button';
 import { ContactWrapper, Row, InputField } from './ContactForm.styles';
+import Fade from 'react-reveal/Fade';
 
 const ContactForm = () => {
 	const dispatch = useDispatch();
@@ -25,41 +26,50 @@ const ContactForm = () => {
 		<ContactWrapper>
 			<form onSubmit={formSubmitHandler}>
 				<Row>
-					<div>
-						<label>First name</label>
-						<InputField
-							label='First Name'
-							placeholder='First Name'
-							value={formData.first_name}
-							onChange={handleChange}
-							fullWidth
-							required
-						/>
-					</div>
-					<div>
-						<label>Second name</label>
-						<InputField
-							label='Second Name'
-							placeholder='Second Name'
-							value={formData.second_name}
-							onChange={handleChange}
-							fullWidth
-						/>
-					</div>
+					<Fade bottom cascade>
+						<div>
+							<label>First name</label>
+							<InputField
+								label='First Name'
+								placeholder='First Name'
+								value={formData.first_name}
+								onChange={handleChange}
+								fullWidth
+								required
+							/>
+						</div>
+					</Fade>
+					<Fade bottom cascade>
+						<div>
+							<label>Second name</label>
+							<InputField
+								label='Second Name'
+								placeholder='Second Name'
+								value={formData.second_name}
+								onChange={handleChange}
+								fullWidth
+							/>
+						</div>
+					</Fade>
+					
+					
 				</Row>
 				<Row>
-					<div>
-						<label>Phone</label>
-						<InputField
-							label='Phone'
-							type='tel'
-							placeholder='Phone'
-							value={formData.phone}
-							onChange={handleChange}
-							fullWidth
-						/>
-					</div>
-					<div>
+					<Fade bottom cascade>
+						<div>
+							<label>Phone</label>
+							<InputField
+								label='Phone'
+								type='tel'
+								placeholder='Phone'
+								value={formData.phone}
+								onChange={handleChange}
+								fullWidth
+							/>
+						</div>
+					</Fade>
+					<Fade bottom cascade>
+						<div>
 						<label>email</label>
 						<InputField
 							label='Email'
@@ -71,8 +81,10 @@ const ContactForm = () => {
 							required
 						/>
 					</div>
+					</Fade>
 				</Row>
 				<Row>
+					<Fade bottom cascade>
 					<div>
 						<label>message</label>
 						<InputField
@@ -85,20 +97,19 @@ const ContactForm = () => {
 							fullWidth
 							spellCheck
 						/>
-					</div>{' '}
+					</div>
+					</Fade>
 				</Row>
-				<div>
-					<Button
-						variant='contained'
-						size='large'
-						type='submit'
-						label='SUBMIT'
-						style={{
-							width: '200px',
-							fontWeight: 'bold',
-						}}
-					/>
-				</div>
+				<Fade bottom cascade>
+					<div>
+						<Button
+							variant='contained'
+							size='large'
+							type='submit'
+							label='SUBMIT'
+						/>
+					</div>
+				</Fade>
 			</form>
 		</ContactWrapper>
 	);

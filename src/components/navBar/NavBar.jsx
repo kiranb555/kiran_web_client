@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { NavWrapper } from './NavBar.style';
 import { useViewPort } from '../ViewportProvider/ViewportProvider';
 
@@ -42,9 +42,9 @@ const NavBar = () => {
 								key={e}
 								onClick={navHandler}
 							>
-								<Link to={`/${e.toLocaleLowerCase()}`}>
+								<NavLink to={`/${e.toLocaleLowerCase()}`} activeClassName="active-nav">
 									{e}
-								</Link>
+								</NavLink>
 							</li>
 						))}
 					</ul>
