@@ -10,11 +10,12 @@ import Projects from '../../components/Projects';
 import { useViewPort } from '../../components/ViewportProvider/ViewportProvider';
 import { HOME_GREETING, JOB_ROLE } from '../../constants';
 import Fade from 'react-reveal/Fade';
+import useGetData from '../../api/useGetData';
 
-const Home = (props) => {
+const Home = () => {
 	const { width } = useViewPort();
 	const isLargeScreen = width > 600 ? true : false;
-
+	useGetData();
 	return (
 		<HomePageWrapper>
 			<BannerWrapper>

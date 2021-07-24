@@ -1,13 +1,16 @@
+import Fade from 'react-reveal/Fade';
+import { useSelector } from 'react-redux';
+import Skeleton from 'react-loading-skeleton';
 import Card from '../Card';
 import {
 	ProjectWrapper,
 	ProjectHeading,
 	ProjectCardWrapper,
 } from './Projects.styles';
-import {projectList} from '../../api/data.json';
-import Fade from 'react-reveal/Fade';
+
 
 const Projects = () => {
+	const { root: { data: { projectList } } } = useSelector((state) => state);
 	return (
 		<ProjectWrapper>
 			 <Fade cascade>
@@ -15,9 +18,14 @@ const Projects = () => {
 			 </Fade>
 				<Fade cascade>
 					<ProjectCardWrapper>
-						{projectList.map((e) => (
+						{projectList?.length ? projectList?.map((e) => (
 								<Card key={e.title} project={e}/>
-						))}
+						)) : <>
+								<Skeleton width={300} height={300} />
+								<Skeleton width={300} height={300} />
+								<Skeleton width={300} height={300}/>
+							</>
+							}
 					</ProjectCardWrapper>
 				</Fade>
 		</ProjectWrapper>

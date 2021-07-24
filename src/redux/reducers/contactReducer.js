@@ -1,12 +1,7 @@
-import {
-  CONTACT_FORM_VALUES,
-  CONTACT_FORM_SUBMIT,
-  CONTACT_FORM_SUBMIT_SUCCESS,
-  CONTACT_FORM_SUBMIT_FAILURE,
-  CONTACT_FORM_RESET,
-} from "./contactTypes";
+import { handleActions } from 'redux-actions';
+import { formInputHandler, formReset, formSubmit, formSubmitFailure, formSubmitSuccess } from '../actions/contactActions';
 
-const initialState = {
+const defaultState = {
   formData: {
     first_name: "",
     second_name: "",
@@ -19,37 +14,39 @@ const initialState = {
   formSubmitFailure: false,
 };
 
-const contactReducer = (state = initialState, action) => {
-  const { type, payload } = action;
-  switch (type) {
-    case CONTACT_FORM_VALUES:
-      return {
-        ...state,
+
+
+const contactReducer = handleActions({
+  [formInputHandler]: (state,action) => ({
+    ...state,
         formData: {
           ...state.formData,
-          [payload.key]: payload.value,
+          [action.payload.key]: action.payload.value,
         },
-      };
-    case CONTACT_FORM_SUBMIT:
-      return {
+  }),
+  [formSubmit]: (state,action) => ({
         ...state,
         fromSubmit: true,
-      };
-    case CONTACT_FORM_SUBMIT_SUCCESS:
-      return {
+        formData: {
+          first_name: "",
+          second_name: "",
+          phone: "",
+          email: "",
+          message: "",
+        },
+  }),
+  
+  [formSubmitSuccess]: (state,action) => ({
         ...state,
         formSubmitSuccess: true,
         formSubmitFailure: false,
-      };
-    case CONTACT_FORM_SUBMIT_FAILURE:
-      return {
+  }),
+  [formSubmitFailure]: (state,action) => ({
         ...state,
         formSubmitSuccess: false,
         formSubmitFailure: true,
-      };
-
-    case CONTACT_FORM_RESET:
-      return {
+  }),
+  [formReset]: (state,action) => ({
         ...state,
         formData: {
           first_name: "",
@@ -61,10 +58,7 @@ const contactReducer = (state = initialState, action) => {
         fromSubmit: false,
         formSubmitSuccess: false,
         formSubmitFailure: false,
-      };
-    default:
-      return state;
-  }
-};
+  })
+  },defaultState)
 
 export default contactReducer;

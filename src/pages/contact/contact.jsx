@@ -5,7 +5,7 @@ import Fade from 'react-reveal/Fade';
 const Contact = () => (
 	<ContactWrapper>
 		<div>
-			<Fade bottom cascade>
+			<Fade bottom>
 				<h2>Contact</h2>
 			</Fade>
 			<Fade>

@@ -1,15 +1,18 @@
-import {experience} from '../../api/data.json';
-import PaperTable from '../PaperTable';
+import { useSelector } from 'react-redux';
 import Fade from 'react-reveal/Fade';
+import PaperTable from '../PaperTable';
 
-export default function ExperienceSection() {
+const ExperienceSection = () => {
+	const { root: { data: { experience } } } = useSelector((state) => state);
 	return (
 		<Fade>
 			<div>
-				{experience.map((obj, id) => (
+				{experience?.length && experience?.map((obj, id) => (
 						<PaperTable key={id} data={obj} />
 				))}
 			</div>
 		</Fade>
 	);
 }
+
+export default ExperienceSection;
