@@ -1,2 +1,2 @@
-export { default } from "./blog.tsx";
+export { default } from "./Blog.jsx";
 
