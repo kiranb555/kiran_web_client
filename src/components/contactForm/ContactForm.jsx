@@ -53,8 +53,6 @@ const ContactForm = () => {
 							/>
 						</div>
 					</Fade>
-					
-					
 				</Row>
 				<Row>
 					<Fade bottom cascade>

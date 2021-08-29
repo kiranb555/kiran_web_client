@@ -26,14 +26,7 @@ const contactReducer = handleActions({
   }),
   [formSubmit]: (state,action) => ({
         ...state,
-        fromSubmit: true,
-        formData: {
-          first_name: "",
-          second_name: "",
-          phone: "",
-          email: "",
-          message: "",
-        },
+        fromSubmit: action.payload,
   }),
   
   [formSubmitSuccess]: (state,action) => ({
