@@ -1,20 +1,20 @@
-import { useDispatch, useSelector } from 'react-redux';
-import Fade from 'react-reveal/Fade';
+import { useDispatch, useSelector } from "react-redux";
+import Fade from "react-reveal/Fade";
 import {
-	formInputHandler,
-	formSubmit,
-} from '../../redux/actions/contactActions';
-import Button from '../Button';
-import { ContactWrapper, Row, InputField } from './ContactForm.styles';
+  formInputHandler,
+  formSubmit,
+} from "../../redux/actions/contactActions";
+import Button from "../Button";
+import { ContactWrapper, Row, InputField } from "./ContactForm.styles";
 
 const ContactForm = () => {
 	const dispatch = useDispatch();
 	const {formData, formLoader, formSubmittedSuccessfully } = useSelector((state) => state.contact);
 
-	const handleChange = (e) => {
-		let { name, value } = e.target;
-		dispatch(formInputHandler({ key: name, value }));
-	};
+  const handleChange = (e) => {
+    let { name, value } = e.target;
+    dispatch(formInputHandler({ key: name, value }));
+  };
 
 	const formSubmitHandler = (e) => {
 		e.preventDefault();

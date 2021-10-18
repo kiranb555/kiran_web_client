@@ -28,5 +28,5 @@ export function* watchContactDetailsSubmit(action) {
 }
 
 export default function* postContactFormData() {
-    yield takeEvery(formSubmit,watchContactDetailsSubmit)
+  yield takeEvery(formSubmit, watchContactDetailsSubmit);
 }
