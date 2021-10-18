@@ -1,27 +1,28 @@
 import {
-    takeEvery, put, call, select
+    takeEvery, put, call, select, delay
 } from 'redux-saga/effects';
 import postContactDetails from '../../services/postContactDetails';
-import { formReset, formSubmit, formSubmitFailure, formSubmitSuccess } from '../actions/contactActions';
+import { formLoader, formReset, formSubmit, formSubmittedSuccessfully } from '../actions/contactActions';
 
 export function* watchContactDetailsSubmit(action) {
     try {
-        
+         yield put(formLoader(true));
         const { formData } = yield select(state => state.contact);
-        console.log(formData, '------formdata-----')
         yield call(
             postContactDetails,
-            '/contactList',
+            '/contactedList',
             formData
         );
-        yield put(formSubmit(true));
-        yield put(formSubmitSuccess());
+        yield put(formLoader(false));
+        yield put(formSubmittedSuccessfully(true));
     }
     catch (error) {
-         yield put(formSubmitFailure());
+         yield put(formLoader(false));
     }
     finally {
-        yield put(formReset())
+        yield put(formReset());
+        yield delay(3000);
+        yield put(formSubmittedSuccessfully(false));
     }
     
 }

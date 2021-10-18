@@ -33,6 +33,9 @@ const baseStyle = css`
 `;
 export const StyledButton = styled.button`
 	${baseStyle}
+	& > svg{
+		margin-left: 5px;
+	}
 `;
 
 export const StyledLink = styled.a`

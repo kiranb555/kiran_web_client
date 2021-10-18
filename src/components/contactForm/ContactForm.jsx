@@ -9,7 +9,7 @@ import { ContactWrapper, Row, InputField } from './ContactForm.styles';
 
 const ContactForm = () => {
 	const dispatch = useDispatch();
-	const formData = useSelector((state) => state.contact.formData);
+	const {formData, formLoader, formSubmittedSuccessfully } = useSelector((state) => state.contact);
 
 	const handleChange = (e) => {
 		let { name, value } = e.target;
@@ -17,11 +17,10 @@ const ContactForm = () => {
 	};
 
 	const formSubmitHandler = (e) => {
-		// prevent default will
-		// prevent form data displaying in url
 		e.preventDefault();
 		dispatch(formSubmit());
 	};
+
 	return (
 		<ContactWrapper>
 			<form onSubmit={formSubmitHandler}>
@@ -111,6 +110,11 @@ const ContactForm = () => {
 							size='large'
 							type='submit'
 							label='SUBMIT'
+							icon
+							iconType={formLoader ? 'spinner'
+								: formSubmittedSuccessfully
+								? 'check'
+								: '' }
 						/>
 					</div>
 				</Fade>

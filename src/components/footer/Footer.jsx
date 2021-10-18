@@ -7,9 +7,8 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import Fade from 'react-reveal/Fade';
 
-const Footer = () => {
-	return (
-		<FooterWrapper data-testid='footer'>
+const Footer = () =>
+	<FooterWrapper data-testid='footer'>
 			<Fade left cascade>
 				<div>
 					<FontAwesomeIcon icon={faTwitter} data-testid='footer-icon-twitter'/>
@@ -17,8 +16,7 @@ const Footer = () => {
 					<FontAwesomeIcon icon={faLinkedin} data-testid='footer-icon-linkedin'/>
 				</div>
 			</Fade>
-		</FooterWrapper>
-	);
-};
+	</FooterWrapper>
+	
 
 export default Footer;

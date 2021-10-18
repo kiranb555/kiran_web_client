@@ -1,5 +1,5 @@
 import { handleActions } from 'redux-actions';
-import { formInputHandler, formReset, formSubmit, formSubmitFailure, formSubmitSuccess } from '../actions/contactActions';
+import { formInputHandler, formLoader, formReset, formSubmittedSuccessfully } from '../actions/contactActions';
 
 const defaultState = {
   formData: {
@@ -9,9 +9,8 @@ const defaultState = {
     email: "",
     message: "",
   },
-  fromSubmit: false,
-  formSubmitSuccess: false,
-  formSubmitFailure: false,
+  formLoader: false,
+  formSubmittedSuccessfully : false
 };
 
 
@@ -24,21 +23,6 @@ const contactReducer = handleActions({
           [action.payload.key]: action.payload.value,
         },
   }),
-  [formSubmit]: (state,action) => ({
-        ...state,
-        fromSubmit: action.payload,
-  }),
-  
-  [formSubmitSuccess]: (state,action) => ({
-        ...state,
-        formSubmitSuccess: true,
-        formSubmitFailure: false,
-  }),
-  [formSubmitFailure]: (state,action) => ({
-        ...state,
-        formSubmitSuccess: false,
-        formSubmitFailure: true,
-  }),
   [formReset]: (state,action) => ({
         ...state,
         formData: {
@@ -47,11 +31,17 @@ const contactReducer = handleActions({
           phone: "",
           email: "",
           message: "",
-        },
-        fromSubmit: false,
-        formSubmitSuccess: false,
-        formSubmitFailure: false,
-  })
+      },
+        formLoader: false
+  }),
+  [formLoader]: (state, action) => ({
+    ...state,
+    formLoader: action.payload
+  }),
+  [formSubmittedSuccessfully]: (state, action) => ({
+    ...state,
+    formSubmittedSuccessfully: action.payload
+  }),
   },defaultState)
 
 export default contactReducer;
