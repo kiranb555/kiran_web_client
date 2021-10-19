@@ -14,7 +14,8 @@ import useGetData from '../../api/useGetData';
 
 const Home = () => {
 	const { width } = useViewPort();
-	const isLargeScreen = width > 600 ? true : false;
+	const isLargeScreen = width > 600;
+	
 	useGetData();
 	return (
 		<HomePageWrapper>

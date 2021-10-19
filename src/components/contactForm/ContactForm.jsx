@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import Fade from "react-reveal/Fade";
+import { LABEL_EMAIL, LABEL_FIRST_NAME, LABEL_MESSAGE, LABEL_SECOND_NAME, LABEL_SUBMIT, LABLE_PHONE } from "../../constants";
 import {
   formInputHandler,
   formSubmit,
@@ -27,11 +28,11 @@ const ContactForm = () => {
 				<Row>
 					<Fade bottom cascade>
 						<div>
-							<label>First name</label>
+							<label>{LABEL_FIRST_NAME}</label>
 							<InputField
-								label='First Name'
+								label={LABEL_FIRST_NAME}
 								name="first_name"
-								placeholder='First Name'
+								placeholder={LABEL_FIRST_NAME}
 								value={formData.first_name}
 								onChange={handleChange}
 								fullWidth
@@ -41,11 +42,11 @@ const ContactForm = () => {
 					</Fade>
 					<Fade bottom cascade>
 						<div>
-							<label>Second name</label>
+							<label>{ LABEL_SECOND_NAME }</label>
 							<InputField
-								label='Second Name'
+								label={LABEL_SECOND_NAME}
 								name="second_name"
-								placeholder='Second Name'
+								placeholder={LABEL_SECOND_NAME}
 								value={formData.second_name}
 								onChange={handleChange}
 								fullWidth
@@ -56,13 +57,13 @@ const ContactForm = () => {
 				<Row>
 					<Fade bottom cascade>
 						<div>
-							<label>Phone</label>
+							<label>{ LABLE_PHONE }</label>
 							<InputField
-								label='Phone'
+								label={ LABLE_PHONE }
 								type='tel'
 								name="phone"
 								pattern="[6-9]{1}[0-9]{9}"
-								placeholder='Phone'
+								placeholder={ LABLE_PHONE }
 								value={formData.phone}
 								onChange={handleChange}
 								fullWidth
@@ -71,12 +72,12 @@ const ContactForm = () => {
 					</Fade>
 					<Fade bottom cascade>
 						<div>
-						<label>email</label>
+							<label>{ LABEL_EMAIL }</label>
 						<InputField
-							label='Email'
+								label={ LABEL_EMAIL }
 							type='email'
 							name="email"
-							placeholder='Email'
+							placeholder={ LABEL_EMAIL }
 							value={formData.email}
 							onChange={handleChange}
 							fullWidth
@@ -88,12 +89,12 @@ const ContactForm = () => {
 				<Row>
 					<Fade bottom cascade>
 					<div>
-						<label>message</label>
+						<label>{  LABEL_MESSAGE }</label>
 						<InputField
-							label='Message'
+							label={ LABEL_MESSAGE }
 							type='text'
 							name="message"
-							placeholder='Message'
+							placeholder={ LABEL_MESSAGE }
 							multiline
 							value={formData.message}
 							onChange={handleChange}
@@ -109,7 +110,7 @@ const ContactForm = () => {
 							variant='contained'
 							size='large'
 							type='submit'
-							label='SUBMIT'
+							label={ LABEL_SUBMIT }
 							icon
 							iconType={formLoader ? 'spinner'
 								: formSubmittedSuccessfully

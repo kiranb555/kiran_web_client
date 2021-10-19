@@ -6,6 +6,7 @@ import ExperienceSection from '../../components/experienceSection';
 import { AboutWrapper, ChipHolder, SectionWrapper } from './about.styles';
 import SkeletonLoader from '../../components/skeletonLoader/skeletonLoader';
 import useGetData from '../../api/useGetData';
+import { LABEL_ABOUT, LABEL_EDUCATION, LABEL_SKILLS, LABLE_EXPERIENCE } from '../../constants';
 
 const About = () => {
 	const { root: { data: { about, skills, education }, loader } } = useSelector((state) => state);
@@ -14,7 +15,7 @@ const About = () => {
 		<AboutWrapper>
 			<SectionWrapper>
 				<Fade bottom>
-					<h2>About</h2>
+					<h2>{ LABEL_ABOUT }</h2>
 				</Fade>
 				<Fade cascade>
 					{about?.length && about?.map((para, index) => (
@@ -29,7 +30,7 @@ const About = () => {
 			</SectionWrapper>
 			<SectionWrapper>
 				<Fade bottom>
-					<h2>Skills</h2>
+					<h2>{ LABEL_SKILLS }</h2>
 				</Fade>
 				 <Fade cascade> 
 					<ChipHolder>
@@ -47,14 +48,14 @@ const About = () => {
 			</SectionWrapper>
 			<SectionWrapper>
 				<Fade bottom>
-					<h2>Experience</h2>
+					<h2>{ LABLE_EXPERIENCE }</h2>
 				</Fade>
 				<ExperienceSection />
 				{loader && <SkeletonLoader/>}
 			</SectionWrapper>
 			<SectionWrapper>
 				<Fade bottom>
-					<h2>Education</h2>
+					<h2>{ LABEL_EDUCATION }</h2>
 				</Fade>
 					<div>
 						{education?.length && education?.map((edu, id) => (

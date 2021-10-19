@@ -15,7 +15,7 @@ export const ContactWrapper = styled.section`
     max-width: calc(350px - 5rem);
     padding: 2rem 0rem;
   }
-  @media screen and (min-width: 425px) and (max-width: 475px) {
+  @media screen and (min-width: 376px) and (max-width: 559px) {
     max-width: 350px;
   }
   @media screen and (min-width: 600px) and (max-width: 768px) {
