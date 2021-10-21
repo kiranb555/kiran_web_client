@@ -23,6 +23,9 @@ export const ContactWrapper = styled.div`
 		}
 		button{
 			width: 200px;
+			 @media screen and (max-width: 375px) {
+				width: 150px;
+			}
 		}
 	}
 `;

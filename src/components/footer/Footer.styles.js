@@ -14,7 +14,7 @@ export const FooterWrapper = styled.footer`
 		justify-content: center;
 		align-items: center;
 		margin: ${theme.sizing.size_10} ${theme.sizing.size_0};
-		& > svg {
+		& a > svg {
 			margin-right: ${theme.sizing.size_20};
 			cursor: pointer;
 

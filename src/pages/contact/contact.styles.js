@@ -12,7 +12,7 @@ export const ContactWrapper = styled.section`
   }
 
   @media screen and (max-width: 375px) {
-    max-width: calc(350px - 5rem);
+    max-width: calc(320px - 5rem);
     padding: 2rem 0rem;
   }
   @media screen and (min-width: 376px) and (max-width: 559px) {

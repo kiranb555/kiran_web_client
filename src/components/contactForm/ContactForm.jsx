@@ -6,6 +6,7 @@ import {
   formSubmit,
 } from "../../redux/actions/contactActions";
 import Button from "../Button";
+import { useViewPort } from "../ViewportProvider/ViewportProvider";
 import { ContactWrapper, Row, InputField } from "./ContactForm.styles";
 
 const ContactForm = () => {
@@ -21,6 +22,9 @@ const ContactForm = () => {
 		e.preventDefault();
 		dispatch(formSubmit());
 	};
+
+	const { width } = useViewPort();
+	const isLargeScreen = width > 600;
 
 	return (
 		<ContactWrapper>
@@ -108,7 +112,7 @@ const ContactForm = () => {
 					<div>
 						<Button
 							variant='contained'
-							size='large'
+							size={!isLargeScreen ? 'medium' : 'large' }
 							type='submit'
 							label={ LABEL_SUBMIT }
 							icon
