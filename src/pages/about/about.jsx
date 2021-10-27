@@ -19,14 +19,14 @@ const About = () => {
 				</Fade>
 				<Fade cascade>
 					{about?.length && about?.map((para, index) => (
-					<p
-						index={index}
-						key={index}
-						dangerouslySetInnerHTML={{ __html: para }}
-					></p>
+						<p
+							index={index}
+							key={index}
+							dangerouslySetInnerHTML={{ __html: para }}
+						></p>
 					))}
 				</Fade>
-					{loader && <SkeletonLoader/>}
+				{loader && <SkeletonLoader/>}
 			</SectionWrapper>
 			<SectionWrapper>
 				<Fade bottom>
@@ -44,7 +44,7 @@ const About = () => {
 						))}
 					</ChipHolder>
 				 </Fade>
-						{loader && <SkeletonLoader/>}
+				{loader && <SkeletonLoader/>}
 			</SectionWrapper>
 			<SectionWrapper>
 				<Fade bottom>
@@ -57,14 +57,14 @@ const About = () => {
 				<Fade bottom>
 					<h2>{ LABEL_EDUCATION }</h2>
 				</Fade>
-					<div>
-						{education?.length && education?.map((edu, id) => (
-							<Fade bottom key={id}>
-								<PaperTable key={id} data={edu} />
-							</Fade>
-						))}
-						{loader && <SkeletonLoader/>}
-					</div>
+				<div>
+					{education?.length && education?.map((edu, id) => (
+						<Fade bottom key={id}>
+							<PaperTable key={id} data={edu} />
+						</Fade>
+					))}
+					{loader && <SkeletonLoader/>}
+				</div>
 			</SectionWrapper>
 		</AboutWrapper>
 	);

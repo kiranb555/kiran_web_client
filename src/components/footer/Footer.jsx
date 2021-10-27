@@ -23,7 +23,7 @@ const Footer = () =>
 				</a>
 			</div>
 		</Fade>
-	</FooterWrapper>
+	</FooterWrapper>;
 	
 
 export default Footer;
