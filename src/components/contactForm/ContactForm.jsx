@@ -2,8 +2,8 @@ import { useDispatch, useSelector } from "react-redux";
 import Fade from "react-reveal/Fade";
 import { LABEL_EMAIL, LABEL_FIRST_NAME, LABEL_MESSAGE, LABEL_SECOND_NAME, LABEL_SUBMIT, LABLE_PHONE } from "../../constants";
 import {
-  formInputHandler,
-  formSubmit,
+	formInputHandler,
+	formSubmit,
 } from "../../redux/actions/contactActions";
 import Button from "../Button";
 import { useViewPort } from "../ViewportProvider/ViewportProvider";
@@ -13,10 +13,10 @@ const ContactForm = () => {
 	const dispatch = useDispatch();
 	const {formData, formLoader, formSubmittedSuccessfully } = useSelector((state) => state.contact);
 
-  const handleChange = (e) => {
-    let { name, value } = e.target;
-    dispatch(formInputHandler({ key: name, value }));
-  };
+	const handleChange = (e) => {
+		let { name, value } = e.target;
+		dispatch(formInputHandler({ key: name, value }));
+	};
 
 	const formSubmitHandler = (e) => {
 		e.preventDefault();
@@ -77,35 +77,35 @@ const ContactForm = () => {
 					<Fade bottom cascade>
 						<div>
 							<label>{ LABEL_EMAIL }</label>
-						<InputField
+							<InputField
 								label={ LABEL_EMAIL }
-							type='email'
-							name="email"
-							placeholder={ LABEL_EMAIL }
-							value={formData.email}
-							onChange={handleChange}
-							fullWidth
-							required
-						/>
-					</div>
+								type='email'
+								name="email"
+								placeholder={ LABEL_EMAIL }
+								value={formData.email}
+								onChange={handleChange}
+								fullWidth
+								required
+							/>
+						</div>
 					</Fade>
 				</Row>
 				<Row>
 					<Fade bottom cascade>
-					<div>
-						<label>{  LABEL_MESSAGE }</label>
-						<InputField
-							label={ LABEL_MESSAGE }
-							type='text'
-							name="message"
-							placeholder={ LABEL_MESSAGE }
-							multiline
-							value={formData.message}
-							onChange={handleChange}
-							fullWidth
-							spellCheck
-						/>
-					</div>
+						<div>
+							<label>{  LABEL_MESSAGE }</label>
+							<InputField
+								label={ LABEL_MESSAGE }
+								type='text'
+								name="message"
+								placeholder={ LABEL_MESSAGE }
+								multiline
+								value={formData.message}
+								onChange={handleChange}
+								fullWidth
+								spellCheck
+							/>
+						</div>
 					</Fade>
 				</Row>
 				<Fade bottom cascade>
@@ -118,8 +118,8 @@ const ContactForm = () => {
 							icon
 							iconType={formLoader ? 'spinner'
 								: formSubmittedSuccessfully
-								? 'check'
-								: '' }
+									? 'check'
+									: '' }
 						/>
 					</div>
 				</Fade>

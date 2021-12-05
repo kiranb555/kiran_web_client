@@ -5,8 +5,8 @@ const GITHUB_URL = "https://github.com/kiranb555";
 const LINKEDIN_URL = "https://www.linkedin.com/in/kiran-b-805554170";
 
 export {
-    BASE_URL,
-    TWITTER_URL,
-    GITHUB_URL,
-    LINKEDIN_URL
-}
+	BASE_URL,
+	TWITTER_URL,
+	GITHUB_URL,
+	LINKEDIN_URL
+};

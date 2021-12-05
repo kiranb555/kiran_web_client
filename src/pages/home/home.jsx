@@ -8,7 +8,7 @@ import {
 import Button from '../../components/Button';
 import Projects from '../../components/Projects';
 import { useViewPort } from '../../components/ViewportProvider/ViewportProvider';
-import { HOME_GREETING, JOB_ROLE } from '../../constants';
+import { LABEL_HOME_GREETING, LABEL_JOB_ROLE, LABEL_DOWNLOAD_RESUME } from '../../constants';
 import Fade from 'react-reveal/Fade';
 import useGetData from '../../api/useGetData';
 
@@ -19,10 +19,10 @@ const Home = () => {
 	useGetData();
 	return (
 		<HomePageWrapper>
-			<BannerWrapper>
+			<BannerWrapper data-testid="home-banner">
 				<Fade bottom cascade>
-					<BannerTitle>{HOME_GREETING} </BannerTitle>
-					<BannerSubtitle>{JOB_ROLE}</BannerSubtitle>
+					<BannerTitle>{LABEL_HOME_GREETING} </BannerTitle>
+					<BannerSubtitle>{LABEL_JOB_ROLE}</BannerSubtitle>
 					<BannerButtonWrapper>
 						<Button
 							as='link'
@@ -31,7 +31,7 @@ const Home = () => {
 							href='kiran_2021.pdf'
 							size={isLargeScreen ? 'medium' : 'small'}
 							download
-							label='Download Resume '
+							label={`${LABEL_DOWNLOAD_RESUME} `}
 						></Button>
 					</BannerButtonWrapper>
 				</Fade>

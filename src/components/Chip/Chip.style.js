@@ -5,8 +5,8 @@ const ChipWrapper = Styled.button`
 		props.size === 'large'
 			? '10px 16px'
 			: props.size === 'medium'
-			? '8px 14px'
-			: '5px 12px'};
+				? '8px 14px'
+				: '5px 12px'};
     border : ${(props) =>
 		props.variant === 'outlined' ? '1px solid #231c42' : '0px'};
     border-radius : ${(props) =>

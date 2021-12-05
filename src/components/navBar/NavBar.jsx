@@ -18,7 +18,7 @@ const NavBar = () => {
 	};
 
 	return (
-		<NavWrapper>
+		<NavWrapper data-testid="navbar">
 			<div className={active ? 'header active' : 'header'}>
 				<nav className='nav'>
 					<ul className='nav-list nav-list-mobile'>

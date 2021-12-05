@@ -12,22 +12,22 @@ import {
 const Projects = () => {
 	const { root: { data: { projectList } } } = useSelector((state) => state);
 	return (
-		<ProjectWrapper>
+		<ProjectWrapper data-testid="project-list">
 			 <Fade cascade>
 				<ProjectHeading>Recent projects & work</ProjectHeading>
 			 </Fade>
-				<Fade cascade>
-					<ProjectCardWrapper>
-						{projectList?.length ? projectList?.map((e) => (
-								<Card key={e.title} project={e}/>
-						)) : <>
-								<Skeleton width={300} height={300} />
-								<Skeleton width={300} height={300} />
-								<Skeleton width={300} height={300}/>
-							</>
-							}
-					</ProjectCardWrapper>
-				</Fade>
+			<Fade cascade>
+				<ProjectCardWrapper>
+					{projectList?.length ? projectList?.map((e) => (
+						<Card key={e.title} project={e}/>
+					)) : <>
+						<Skeleton width={300} height={300} />
+						<Skeleton width={300} height={300} />
+						<Skeleton width={300} height={300}/>
+					</>
+					}
+				</ProjectCardWrapper>
+			</Fade>
 		</ProjectWrapper>
 	);
 };

@@ -4,8 +4,8 @@ import postContactFormData from './postContactDetails.saga';
 
 
 export default function* rootSaga() {
-    yield all([
-        call(getInitialData),
-        call(postContactFormData) 
-    ]);
+	yield all([
+		call(getInitialData),
+		call(postContactFormData) 
+	]);
 }

@@ -13,30 +13,32 @@ import Footer from "./components/footer";
 const Home = lazy(() => import("./pages/home"));
 const About = lazy(() => import("./pages/about"));
 const Contact = lazy(() => import("./pages/contact"));
+const Dashboard = lazy(() => import("./pages/dashboard"));
 
 function App() {
-  return (
-    <Router>
-      <Provider store={store}>
-        <Theme>
-          <ViewPortProvider>
-            <NavBar />
-            <MainWrapper>
-              <Suspense fallback={<div>Loading...</div>}>
-                <Switch>
-                  <Route exact path={["/", "/home"]} component={Home} />
-                  <Route exact path="/about" component={About} />
-                  <Route exact path="/contact" component={Contact} />
-                  <Route component={Error} />
-                </Switch>
-              </Suspense>
-              <Footer />
-            </MainWrapper>
-          </ViewPortProvider>
-        </Theme>
-      </Provider>
-    </Router>
-  );
+	return (
+		<Router>
+			<Provider store={store}>
+				<Theme>
+					<ViewPortProvider>
+						<NavBar />
+						<MainWrapper>
+							<Suspense fallback={<div>Loading...</div>}>
+								<Switch>
+									<Route exact path={["/", "/home"]} component={Home} />
+									<Route exact path="/about" component={About} />
+									<Route exact path="/contact" component={Contact} />
+									<Route exact path="/dashboard" component={Dashboard} />
+									<Route component={Error} />
+								</Switch>
+							</Suspense>
+							<Footer />
+						</MainWrapper>
+					</ViewPortProvider>
+				</Theme>
+			</Provider>
+		</Router>
+	);
 }
 
 export default App;

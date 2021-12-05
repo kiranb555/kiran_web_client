@@ -8,11 +8,11 @@ const ExperienceSection = () => {
 		<Fade>
 			<div>
 				{experience?.length && experience?.map((obj, id) => (
-						<PaperTable key={id} data={obj} />
+					<PaperTable key={id} data={obj} />
 				))}
 			</div>
 		</Fade>
 	);
-}
+};
 
 export default ExperienceSection;

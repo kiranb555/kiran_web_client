@@ -1,20 +1,20 @@
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { StyledButton, StyledLink } from './Button.style';
-import { faSpinner, faCheck } from '@fortawesome/free-solid-svg-icons'
+import { faSpinner, faCheck } from '@fortawesome/free-solid-svg-icons';
 
 const Button = ({ as, label, href, size, variant, type, icon, iconType, ...props }) => {
 	const displayIcon = () => {
 		if (icon && iconType) {
 			let type = iconType.toLowerCase();
 			return type === 'spinner'
-					? <FontAwesomeIcon icon={faSpinner} spin/>
-					: type === 'check'
+				? <FontAwesomeIcon icon={faSpinner} spin/>
+				: type === 'check'
 					? <FontAwesomeIcon icon={faCheck} />
-					: null
+					: null;
 		}
-		return null
-	}
+		return null;
+	};
 	return as && as.toLowerCase() === 'link' ? (
 		<StyledLink
 			href={href}
@@ -27,8 +27,8 @@ const Button = ({ as, label, href, size, variant, type, icon, iconType, ...props
 		</StyledLink>
 	) : (
 		<StyledButton size={size} variant={variant} type={type} {...props}>
-				{label}
-				{displayIcon()}
+			{label}
+			{displayIcon()}
 		</StyledButton>
 	);
 };

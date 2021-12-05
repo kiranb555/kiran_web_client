@@ -3,12 +3,12 @@ import getDataReducer from '../reducers/getDataReducer';
 import contactReducer from './contactReducer';
 
 const staticReducers = {
-    root: getDataReducer,
-    contact: contactReducer
+	root: getDataReducer,
+	contact: contactReducer
 };
 
 const rootReducer = combineReducers({
-    ...staticReducers
+	...staticReducers
 });
 
 export default rootReducer;
