@@ -24,6 +24,6 @@ const Footer = () =>
 			</div>
 		</Fade>
 	</FooterWrapper>
-	
+	// Test1 commit
 
 export default Footer;
