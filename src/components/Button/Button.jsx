@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { StyledButton, StyledLink } from './Button.style';
 import { faSpinner, faCheck } from '@fortawesome/free-solid-svg-icons'
+import { StyledButton, StyledLink } from './Button.style';
 
 const Button = ({ as, label, href, size, variant, type, icon, iconType, ...props }) => {
 	const displayIcon = () => {

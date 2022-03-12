@@ -5,6 +5,8 @@ const theme = {
 			primary: '#3155dc',
 			secondary: '#17a974',
 			ternary: '#231c42',
+			bg: '#ffffff',
+			bgLight: '#f7f7f7'
 		},
 		border: {
 			brand: 'rgb(1, 33, 105)',
@@ -27,10 +29,8 @@ const theme = {
 		},
 		scaffold: {
 			text: {
-				error: 'rgb(221, 6, 55)',
-				success: 'rgb(51, 135, 0)',
-				primary: '#fff',
-				secondary: 'rgb(93, 93, 93)',
+				primary: '#ffffff',
+				secondary: '#222426',
 			},
 			greyscale: {
 				black: 'rgb(0, 0, 0)',
@@ -38,7 +38,7 @@ const theme = {
 				grey: 'rgb(204, 204, 204)',
 				darker_grey: 'rgb(51, 51, 51)',
 			},
-		},
+		}
 	},
 	border: {
 		radius: {
@@ -287,4 +287,47 @@ const theme = {
 		},
 	},
 };
+
+export const darkTheme = {
+	...theme,
+	color: {
+		...theme.color,
+		background: {
+			primary: '#3155dc',
+			secondary: '#17a974',
+			ternary: '#231c42',
+			bg: '#1f2028',
+			bgLight: '#2e3039'
+			
+		},
+		scaffold: {
+			...theme.color.scaffold,
+			text: {
+				primary: '#000000',
+				secondary: '#ffffff',
+			}
+		}
+	}
+}
+
+export const lightTheme = {
+	...theme,
+	color: {
+		...theme.color,
+		background: {
+			primary: '#3155dc',
+			secondary: '#17a974',
+			ternary: '#231c42',
+			bg: '#ffffff',
+			bgLight: '#f7f7f7'
+		},
+		scaffold: {
+			...theme.color.scaffold,
+			text: {
+				primary: '#ffffff',
+				secondary: '#222426',
+			}
+		}
+	}
+}
 export default theme;

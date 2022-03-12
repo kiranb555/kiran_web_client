@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { NavWrapper } from './NavBar.style';
 import { useViewPort } from '../ViewportProvider/ViewportProvider';
+import ThemeSwitch from '../ThemeSwitch/ThemeSwitch';
 
 const NavBar = () => {
 	const [list] = useState(['Home', 'About', 'Contact']);
@@ -28,6 +29,7 @@ const NavBar = () => {
 								<span className='line line-bottom'></span>
 							</div>
 						</li>
+						<ThemeSwitch/>
 					</ul>
 					<ul
 						className={
@@ -47,6 +49,7 @@ const NavBar = () => {
 								</NavLink>
 							</li>
 						))}
+						<ThemeSwitch/>
 					</ul>
 				</nav>
 			</div>
