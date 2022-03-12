@@ -6,7 +6,7 @@ export const NavWrapper = styled.header`
 		position: fixed;
 		top: 0;
 		z-index: 1400;
-		height: 3rem;
+		height: 4rem;
 		width: 100%;
 		background-color: #231c42;
 		backdrop-filter: blur(2rem);
@@ -23,6 +23,9 @@ export const NavWrapper = styled.header`
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		.theme-switcher{
+			display: none;
+		}
 	}
 	a {
 		color: #fff;
@@ -45,10 +48,16 @@ export const NavWrapper = styled.header`
 		align-items: center;
 		height: 100%;
 		padding: 0 1rem;
+		.theme-switcher{
+			display: block;
+		}		
 	}
 	.nav-list-small {
 		visibility: hidden;
 		box-sizing: border-box;
+		.theme-switcher{
+			display: block;
+		}
 	}
 	.nav-item {
 		margin-right: 1rem;
@@ -66,10 +75,13 @@ export const NavWrapper = styled.header`
 		}
 		.nav-list-mobile {
 			display: flex;
+			.theme-switcher{
+				display: block;
+			}
 		}
 		.nav-item {
 			min-width: 3rem;
-			height: 3rem;
+			height: 4rem;
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -146,6 +158,9 @@ export const NavWrapper = styled.header`
 			opacity: 1;
 			visibility: visible;
 			padding: 2.85rem 2.5rem 0.5rem;
+			.theme-switcher{
+				display: none;
+			}
 		}
 		.nav-list-small .nav-item {
 			width: 100%;

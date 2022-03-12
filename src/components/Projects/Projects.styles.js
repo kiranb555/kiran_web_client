@@ -14,11 +14,14 @@ export const ProjectWrapper = styled.div`
 `;
 
 export const ProjectHeading = styled.div`
-	text-transform: capitalize;
-	text-align: center;
-	font-size: 1.8rem;
-	font-weight: 600;
-	padding: 2rem 0;
+	${({ theme }) => `
+		text-transform: capitalize;
+		text-align: center;
+		font-size: 1.8rem;
+		font-weight: 600;
+		padding: 2.5rem 0;
+		color: ${theme.color.scaffold.text.secondary}
+	`}
 `;
 
 export const ProjectCardWrapper = styled.div`

@@ -22,7 +22,6 @@ const Card = ({project}) => {
                     }
             </ul>: null
             }
-           
         </CardWrapper>
     )
 }
