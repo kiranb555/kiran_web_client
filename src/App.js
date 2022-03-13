@@ -1,8 +1,9 @@
 import { lazy, Suspense } from "react";
 import { Provider } from "react-redux";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { PersistGate } from 'redux-persist/integration/react'
 import "fontsource-roboto";
-import store from "./redux/store";
+import store,{persistor} from "./redux/store";
 import Theme from "./styles/theme";
 import { MainWrapper } from "./App.styles";
 import { ViewPortProvider } from "./components/ViewportProvider";
@@ -18,6 +19,7 @@ function App() {
   return (
     <Router>
       <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
         <Theme>
           <ViewPortProvider>
             <NavBar />
@@ -33,7 +35,8 @@ function App() {
               <Footer />
             </MainWrapper>
           </ViewPortProvider>
-        </Theme>
+          </Theme>
+           </PersistGate>
       </Provider>
     </Router>
   );
