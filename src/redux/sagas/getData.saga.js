@@ -1,4 +1,4 @@
-import { takeEvery, put, call } from "redux-saga/effects";
+import { takeEvery, put } from "redux-saga/effects";
 import { getData, loader, setData } from "../actions/getData";
 // import getPortfolioAllData from "../../services/getPortfolioAllData";
 import data from '../../api/data.json';
