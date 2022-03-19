@@ -23,7 +23,7 @@ const Home = () => {
 				<Fade bottom cascade>
 					<BannerTitle>{HOME_GREETING} </BannerTitle>
 					<BannerSubtitle>{JOB_ROLE}</BannerSubtitle>
-					<BannerButtonWrapper>
+					{/* <BannerButtonWrapper>
 						<Button
 							as='link'
 							variant='contained'
@@ -33,7 +33,7 @@ const Home = () => {
 							download
 							label='Download Resume '
 						></Button>
-					</BannerButtonWrapper>
+					</BannerButtonWrapper> */}
 				</Fade>
 			</BannerWrapper>
 			<Projects />
