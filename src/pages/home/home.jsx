@@ -3,18 +3,18 @@ import {
 	BannerWrapper,
 	BannerTitle,
 	BannerSubtitle,
-	BannerButtonWrapper,
+	// BannerButtonWrapper,
 } from './home.styles';
-import Button from '../../components/Button';
+// import Button from '../../components/Button';
 import Projects from '../../components/Projects';
-import { useViewPort } from '../../components/ViewportProvider/ViewportProvider';
+// import { useViewPort } from '../../components/ViewportProvider/ViewportProvider';
 import { HOME_GREETING, JOB_ROLE } from '../../constants';
 import Fade from 'react-reveal/Fade';
 import useGetData from '../../api/useGetData';
 
 const Home = () => {
-	const { width } = useViewPort();
-	const isLargeScreen = width > 600;
+	// const { width } = useViewPort();
+	// const isLargeScreen = width > 600;
 	
 	useGetData();
 	return (
