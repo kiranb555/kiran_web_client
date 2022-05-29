@@ -1,6 +1,18 @@
 {
     "projectList": [
 		{
+			"title": "Lowes ca",
+			"description": "Lowes canada product details page and product listing pages",
+			"github":"",
+			"web": "https://www.lowes.ca/search?query=*"
+		},
+		{
+			"title": "iqcio",
+			"description": "IQCIO LLC web app",
+			"github":"",
+			"web": ""
+		},
+		{
 			"title": "Corona pandemic tracker",
 			"description": "Personal project can view corona daily updates",
 			"github":"https://github.com/kiranb555/corona",
@@ -11,18 +23,31 @@
 			"description": "grid view of periodic table elements ui",
 			"github":"https://github.com/kiranb555/periodic-table",
 			"web": "https://periodictableelements.herokuapp.com"
-		},
-		{
-			"title": "iqcio",
-			"description": "IQCIO LLC web app",
-			"github":"",
-			"web": ""
 		}
 	],
     "experience": [
+	{
+        "company": "Lowe's Services India",
+        "title": "Software Engineer",
+        "period": "May 2021 - Present",
+        "projects": "Lowes canada product detail page and product listing page",
+        "team_size": "5+",
+        "skills": [
+          "html",
+          "css",
+          "Js",
+          "React.js",
+          "Redux",
+          "sass",
+          "React testing library",
+          "Jenkins",
+		  "Sinnaker"
+        ],
+        "description": "Worked on Retail domain, every day task includes working on building Pages reusable components and maintaing lowes.ca site.Extensively worked on Product detail page and Product Listing pages."
+      },
       {
         "company": "Digital FinTech solutions",
-        "title": "Product development engineer",
+        "title": "Product Development Engineer",
         "period": "Oct 2018 - Feb 2021",
         "projects": "IQCIO",
         "team_size": "2",
@@ -37,7 +62,7 @@
           "bootstrap",
           "highcharts"
         ],
-        "description": "Worked in a Fintech Domain project called IQCIO, build end to end web-site, which includes dashboard, reusable components, custom charts, custom tables. Used above technologies"
+        "description": "Worked on Fintech domain, every day task included building and maintaining component to IQCIO, site includes dashboard, reusable components, custom charts, custom tables and more"
       },
       {
         "company": "Gapoon",

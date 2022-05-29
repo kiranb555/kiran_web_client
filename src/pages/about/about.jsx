@@ -9,7 +9,11 @@ import useGetData from '../../api/useGetData';
 import { LABEL_ABOUT, LABEL_EDUCATION, LABEL_SKILLS, LABLE_EXPERIENCE } from '../../constants';
 
 const About = () => {
-	const { root: { data: { about, skills, education }, loader } } = useSelector((state) => state);
+	const {
+		root: {
+		data: { about, skills, education },
+		loader
+	} } = useSelector((state) => state);
 	useGetData();
 	return (
 		<AboutWrapper>

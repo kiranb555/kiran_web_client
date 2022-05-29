@@ -3,19 +3,17 @@ import {
 	BannerWrapper,
 	BannerTitle,
 	BannerSubtitle,
-	// BannerButtonWrapper,
+	BannerButtonWrapper,
 } from './home.styles';
-// import Button from '../../components/Button';
+import Button from '../../components/Button';
 import Projects from '../../components/Projects';
-// import { useViewPort } from '../../components/ViewportProvider/ViewportProvider';
+import { useViewPort } from '../../components/ViewportProvider/ViewportProvider';
 import { HOME_GREETING, JOB_ROLE } from '../../constants';
 import Fade from 'react-reveal/Fade';
 import useGetData from '../../api/useGetData';
 
 const Home = () => {
-	// const { width } = useViewPort();
-	// const isLargeScreen = width > 600;
-	
+	const { isLargeScreen } = useViewPort();
 	useGetData();
 	return (
 		<HomePageWrapper>
@@ -23,17 +21,17 @@ const Home = () => {
 				<Fade bottom cascade>
 					<BannerTitle>{HOME_GREETING} </BannerTitle>
 					<BannerSubtitle>{JOB_ROLE}</BannerSubtitle>
-					{/* <BannerButtonWrapper>
+					<BannerButtonWrapper>
 						<Button
 							as='link'
 							variant='contained'
 							color='secondary'
-							href='kiran_2021.pdf'
+							href='kiran_2022.pdf'
 							size={isLargeScreen ? 'medium' : 'small'}
 							download
 							label='Download Resume '
 						></Button>
-					</BannerButtonWrapper> */}
+					</BannerButtonWrapper>
 				</Fade>
 			</BannerWrapper>
 			<Projects />

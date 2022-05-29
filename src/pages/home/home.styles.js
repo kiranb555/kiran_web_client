@@ -21,11 +21,11 @@ export const BannerWrapper = styled.div`
 `}
 `;
 
-export const BannerTitle = styled.h2`
+export const BannerTitle = styled.h1`
 	font-size: ${({ theme }) => theme.sizing.size_40};
 `;
 
-export const BannerSubtitle = styled.div`
+export const BannerSubtitle = styled.h2`
 	font-size: ${({ theme }) => theme.sizing.size_16};
 	margin-top: ${({ theme }) => theme.sizing.size_10};
 `;
