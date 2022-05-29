@@ -10,10 +10,13 @@ import { ViewPortProvider } from "./components/ViewportProvider";
 import NavBar from "./components/navBar/NavBar.jsx";
 import Error from "./pages/404";
 import Footer from "./components/footer";
+import ProtectedRoute from "./pages/protectedRoute/protectedRoute";
+import Dashboard from "./pages/dashboard/dashboard";
 
 const Home = lazy(() => import("./pages/home"));
 const About = lazy(() => import("./pages/about"));
 const Contact = lazy(() => import("./pages/contact"));
+const Login = lazy(() => import("./pages/login"));
 
 function App() {
   return (
@@ -29,6 +32,8 @@ function App() {
                   <Route exact path={["/", "/home"]} component={Home} />
                   <Route exact path="/about" component={About} />
                   <Route exact path="/contact" component={Contact} />
+                  <Route exact path="/login" component={Login} />
+                  <ProtectedRoute exact path="/dashboard" component={Dashboard}/>
                   <Route component={Error} />
                 </Switch>
               </Suspense>

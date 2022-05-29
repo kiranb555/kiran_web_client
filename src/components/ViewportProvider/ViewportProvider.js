@@ -24,5 +24,6 @@ export const ViewPortProvider = ({ children }) => {
 
 export const useViewPort = () => {
 	const { width, height } = useContext(viewportContext);
-	return { width, height };
+	const isLargeScreen = width > 600;
+	return { width, height, isLargeScreen };
 };

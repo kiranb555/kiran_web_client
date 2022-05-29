@@ -23,8 +23,7 @@ const ContactForm = () => {
 		dispatch(formSubmit());
 	};
 
-	const { width } = useViewPort();
-	const isLargeScreen = width > 600;
+	const { isLargeScreen } = useViewPort();
 
 	return (
 		<ContactWrapper>
