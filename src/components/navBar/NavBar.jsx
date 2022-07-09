@@ -3,10 +3,10 @@ import { NavLink } from 'react-router-dom';
 import { NavWrapper } from './NavBar.style';
 import { useViewPort } from '../ViewportProvider/ViewportProvider';
 import ThemeSwitch from '../ThemeSwitch/ThemeSwitch';
+import { navItems } from '../../constants';
 // import LogoutButton from '../LogoutButton/LogoutButton';
 
 const NavBar = () => {
-	const [list] = useState(['Home', 'About', 'Contact']);
 	const [active, setActive] = useState(false);
 
 	const { isLargeScreen } = useViewPort();
@@ -18,6 +18,7 @@ const NavBar = () => {
 	const navHandler = () => {
 		setActive(false);
 	};
+	console.log(navItems)
 
 	return (
 		<NavWrapper>
@@ -41,7 +42,7 @@ const NavBar = () => {
 					>
 
 						{/* <LogoutButton/> */}
-						{list.map((e) => (
+						{navItems?.map((e) => (
 							<li
 								className='nav-item'
 								key={e}

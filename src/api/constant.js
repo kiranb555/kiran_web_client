@@ -9,4 +9,4 @@ export {
     TWITTER_URL,
     GITHUB_URL,
     LINKEDIN_URL
-}
+};

@@ -8,9 +8,13 @@
 		},
 		{
 			"title": "iqcio",
-			"description": "IQCIO LLC web app",
-			"github":"",
-			"web": ""
+			"description": "IQCIO LLC web app"
+		},
+		{
+			"title": "Portfolio",
+			"description": "Personal portfolio website",
+			"github":"https://github.com/kiranb555/kiran_web_client",
+			"web": "https://kirandev.in"
 		},
 		{
 			"title": "Corona pandemic tracker",
@@ -41,7 +45,7 @@
           "sass",
           "React testing library",
           "Jenkins",
-		  "Sinnaker"
+		  "Spinnaker"
         ],
         "description": "Worked on Retail domain, every day task includes working on building Pages reusable components and maintaing lowes.ca site.Extensively worked on Product detail page and Product Listing pages."
       },
@@ -77,7 +81,7 @@
 	"about": [
 		"Hi, i'm <span>Kiran</span> 👋, from Bangalore, India. Professionally i am a Software Engineer, currently working in a awesome startup. I'm passionate about bringing both the technical and visual aspects of digital products in to life.",
 		"I love frontend web development and offcourse javascript. Currently learning backend technologies. I always strive to learn new things.",
-		"Apart from being a tech geek, you can find me travelling, doing photography, or in the gym "
+		"Apart from being a tech geek, you can find me travelling, doing photography, or doing cycling"
 	],
 	"skills": [
 		"html5",
@@ -91,8 +95,12 @@
 		"sass",
 		"styled components",
 		"Bootstrap",
-		"Material ui",
-		"react testing"
+		"react testing",
+		"node js",
+		"express",
+		"Jenkins",
+		"Spinnaker",
+		"Figma"
 	],
 	"education": [
 		{

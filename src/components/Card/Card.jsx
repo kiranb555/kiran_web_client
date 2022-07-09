@@ -13,14 +13,16 @@ const Card = ({project}) => {
             <h2 className="title">{title}</h2>
             <div className="description">{description}</div>
             {
-                (github || web) ?  <ul>
-                    {
-                        github && <li><a href={github} rel="noreferrer" target="_blank" aria-label="github link"><FontAwesomeIcon icon={faGithub} /></a></li>
-                    }
-                    {
-                        web && <li><a href={web} rel="noreferrer" target="_blank" aria-label="web link"><FontAwesomeIcon icon={faLink} /></a></li>
-                    }
-            </ul>: null
+                (github || web) ?
+                    <ul>
+                        {
+                            github && <li><a href={github} rel="noreferrer" target="_blank" aria-label="github link"><FontAwesomeIcon icon={faGithub} /></a></li>
+                        }
+                        {
+                            web && <li><a href={web} rel="noreferrer" target="_blank" aria-label="web link"><FontAwesomeIcon icon={faLink} /></a></li>
+                        }
+                    </ul>
+                    : null
             }
         </CardWrapper>
     )

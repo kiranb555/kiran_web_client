@@ -11,6 +11,12 @@ const LABEL_ABOUT = "About";
 const LABEL_SKILLS = "Skills";
 const LABLE_EXPERIENCE = 'Experience';
 const LABEL_EDUCATION = 'Education';
+const navItems = [
+    'Home',
+    'About',
+    'Contact',
+    // 'Blog'
+]
 
 export {
     HOME_GREETING,
@@ -25,5 +31,6 @@ export {
     LABEL_ABOUT,
     LABEL_SKILLS,
     LABLE_EXPERIENCE,
-    LABEL_EDUCATION
+    LABEL_EDUCATION,
+    navItems
 };

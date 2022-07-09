@@ -6,7 +6,7 @@ export const ProjectWrapper = styled.div`
 	justify-content: center;
 	max-width: 1440px;
 	margin: auto;
-	padding: 0 1.5rem;
+	padding: 1.5rem;
 
 	@media only screen and (max-width: 600px) {
 		padding: 1rem;

@@ -17,6 +17,7 @@ const Home = lazy(() => import("./pages/home"));
 const About = lazy(() => import("./pages/about"));
 const Contact = lazy(() => import("./pages/contact"));
 const Login = lazy(() => import("./pages/login"));
+// const Blog = lazy(() => import('./pages/blog'));
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
                   <Route exact path={["/", "/home"]} component={Home} />
                   <Route exact path="/about" component={About} />
                   <Route exact path="/contact" component={Contact} />
+                  {/* <Route exact path="/blog" component={Blog} /> */}
                   <Route exact path="/login" component={Login} />
                   <ProtectedRoute exact path="/dashboard" component={Dashboard}/>
                   <Route component={Error} />
