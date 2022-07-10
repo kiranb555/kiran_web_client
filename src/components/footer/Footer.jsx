@@ -24,7 +24,7 @@ const Footer = () =>
 			</div>
 		</Fade>
 		<div className='footer-copywrite'>
-			&copy; {new Date().getFullYear()} Kiran b
+			&copy; {new Date().getFullYear()} Kiran
 		</div>
 	</FooterWrapper>
 
