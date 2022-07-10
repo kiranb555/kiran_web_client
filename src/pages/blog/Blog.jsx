@@ -1,7 +1,7 @@
 import React from "react";
 
 const Blog = () => {
-  return <div>Blog post goes here</div>;
+  return <div>For blog page checkout mongo db blog ui that looks good</div>;
 };
 
 export default Blog;

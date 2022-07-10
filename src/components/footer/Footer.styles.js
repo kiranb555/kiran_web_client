@@ -9,19 +9,30 @@ export const FooterWrapper = styled.footer`
 	background-color: ${theme.color.background.ternary};
 	font-size: ${theme.sizing.size_20} ;
 
-	& > div {
+	.footer-social {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		margin: ${theme.sizing.size_10} ${theme.sizing.size_0};
-		& a > svg {
-			margin-right: ${theme.sizing.size_20};
-			cursor: pointer;
-
-			& :hover {
-				color: ${theme.color.icon.interactive};
+		& a{
+			& svg{
+				cursor: pointer;
+				margin-right: ${theme.sizing.size_20};
+				& :hover {
+					color: ${theme.color.icon.interactive};
+				}
+			}
+			&:last-child{
+				& svg{
+					margin-right: ${theme.sizing.size_0};
+				}
 			}
 		}
+	}
+	.footer-copywrite{
+		font-size: ${theme.sizing.size_14};
+		padding: ${theme.sizing.size_15} ${theme.sizing.size_0};
+		text-align:center;
 	}
 `}
 `;

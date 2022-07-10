@@ -11,7 +11,7 @@ import { GITHUB_URL, TWITTER_URL, LINKEDIN_URL } from '../../api/constant';
 const Footer = () =>
 	<FooterWrapper data-testid='footer'>
 		<Fade left cascade>
-			<div>
+			<div className='footer-social'>
 				<a href={TWITTER_URL} target="_blank" rel="noreferrer" aria-label='twitter'>
 					<FontAwesomeIcon icon={faTwitter} data-testid='footer-icon-twitter'/>
 				</a>
@@ -23,6 +23,9 @@ const Footer = () =>
 				</a>
 			</div>
 		</Fade>
+		<div className='footer-copywrite'>
+			&copy; {new Date().getFullYear()} Kiran b
+		</div>
 	</FooterWrapper>
 
 export default Footer;
