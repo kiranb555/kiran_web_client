@@ -12,7 +12,7 @@ const CardWrapper = styled.div`
 			0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
 		display: flex;
 		flex-direction: column;
-
+		transition:transform 500ms cubic-bezier(0.165, 0.84, 0.44, 1);
 		.title{
 			text-transform: capitalize;
 			padding-bottom: 32px;
@@ -30,6 +30,9 @@ const CardWrapper = styled.div`
 				font-size: 25px;
 				margin-right: 20px;
 			}
+		}
+		&:hover{
+			transform: translate(0, -3px);
 		}
 
 	`

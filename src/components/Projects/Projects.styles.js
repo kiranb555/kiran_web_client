@@ -27,6 +27,6 @@ export const ProjectHeading = styled.div`
 export const ProjectCardWrapper = styled.div`
 	display: flex;
 	flex-wrap: wrap;
-	gap: 1rem;
+	gap: 1.5rem;
 	justify-content: center;
 `;
