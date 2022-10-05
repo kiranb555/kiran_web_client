@@ -26,7 +26,7 @@ const Home = () => {
 							as='link'
 							variant='contained'
 							color='secondary'
-							href='kiran_2022.pdf'
+							href='kiran_b_Resume.pdf'
 							size={isLargeScreen ? 'medium' : 'small'}
 							download
 							label='Download Resume '
