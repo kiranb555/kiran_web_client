@@ -1,23 +1,20 @@
 import PropTypes from 'prop-types';
-import Chip from '../Chip';
+import { useTranslation } from 'react-i18next';
 import { PaperTableWrapper, ChipWrapper } from './PaperTable.style';
+import { Badge } from 'reactstrap';
 
 const PaperTable = ({ data }) => {
+	const { t } = useTranslation();
 	return (
 		<PaperTableWrapper>
 			{data && Object.keys(data).length > 0
 				? Object.keys(data).map((key, i) => (
-						<div className='paper__holder' key={i}>
-							<div>{key && key.split('_').join(' ')}</div>
+					<div className='paper__holder' key={i}>
+							<div>{ t(key.toLowerCase())}</div>
 							{Array.isArray(data[key]) ? (
 								<ChipWrapper>
 									{data[key].map((item, id) => (
-										<Chip
-											key={id}
-											label={item.toUpperCase()}
-											variant='outlined'
-											size='small'
-										/>
+										<Badge key={id} pill>{item.toUpperCase()}</Badge>
 									))}
 								</ChipWrapper>
 							) : (

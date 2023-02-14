@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSpinner, faCheck } from '@fortawesome/free-solid-svg-icons'
+import { faSpinner, faCheck, faDownload } from '@fortawesome/free-solid-svg-icons'
 import { StyledButton, StyledLink } from './Button.style';
 
 const Button = ({ as, label, href, size, variant, type, icon, iconType, ...props }) => {
@@ -11,6 +11,8 @@ const Button = ({ as, label, href, size, variant, type, icon, iconType, ...props
 					? <FontAwesomeIcon icon={faSpinner} spin/>
 					: type === 'check'
 					? <FontAwesomeIcon icon={faCheck} />
+					: type === "download"
+					? <FontAwesomeIcon icon={faDownload} />
 					: null
 		}
 		return null

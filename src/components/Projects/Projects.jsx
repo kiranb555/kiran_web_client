@@ -5,28 +5,34 @@ import Card from '../Card';
 import {
 	ProjectWrapper,
 	ProjectHeading,
-	ProjectCardWrapper,
 } from './Projects.styles';
+import { useTranslation } from 'react-i18next';
+import { Col, Row } from 'reactstrap';
 
 
 const Projects = () => {
+	const { t } = useTranslation();
 	const { root: { data: { projectList } } } = useSelector((state) => state);
 	return (
 		<ProjectWrapper>
 			 <Fade cascade>
-				<ProjectHeading>Recent projects & work</ProjectHeading>
+				<ProjectHeading>{t('recent_proj')}</ProjectHeading>
 			 </Fade>
 				<Fade cascade>
-					<ProjectCardWrapper>
-						{projectList?.length ? projectList?.map((e) => (
+					<Row>
+					{
+						projectList?.length ? projectList?.map((e) => (
+							<Col sm={12} md={4} className="p-3">
 								<Card key={e.title} project={e}/>
-						)) : <>
+							</Col>
+					)) :
+						<>
 								<Skeleton width={300} height={300} />
 								<Skeleton width={300} height={300} />
 								<Skeleton width={300} height={300}/>
 							</>
 							}
-					</ProjectCardWrapper>
+					</Row>
 				</Fade>
 		</ProjectWrapper>
 	);

@@ -7,8 +7,11 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import Fade from 'react-reveal/Fade';
 import { GITHUB_URL, TWITTER_URL, LINKEDIN_URL } from '../../api/constant';
+import { useTranslation } from 'react-i18next';
 
-const Footer = () =>
+const Footer = () => {
+	const { t } = useTranslation();
+	return (
 	<FooterWrapper data-testid='footer'>
 		<Fade left cascade>
 			<div className='footer-social'>
@@ -24,8 +27,10 @@ const Footer = () =>
 			</div>
 		</Fade>
 		<div className='footer-copywrite'>
-			&copy; {new Date().getFullYear()} Kiran
+			&copy; 2023 Kiran.{t("all_rights_reserved")}
 		</div>
 	</FooterWrapper>
+	)
+}
 
 export default Footer;

@@ -180,3 +180,12 @@ export const NavWrapper = styled.header`
 		}
 	}
 `;
+
+export const NavBarWrapper = styled.header`
+	.active-nav{
+		color:#fff;
+	}
+	li{
+		cursor: pointer;
+	}
+`;

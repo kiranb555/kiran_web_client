@@ -1,17 +1,18 @@
 import { useSelector } from 'react-redux';
 import Fade from 'react-reveal/Fade';
-import Chip from '../../components/Chip';
+import { useTranslation } from 'react-i18next';
 import PaperTable from '../../components/PaperTable';
 import ExperienceSection from '../../components/experienceSection';
 import { AboutWrapper, ChipHolder, SectionWrapper } from './about.styles';
 import SkeletonLoader from '../../components/skeletonLoader/skeletonLoader';
 import useGetData from '../../api/useGetData';
-import { LABEL_ABOUT, LABEL_EDUCATION, LABEL_SKILLS, LABLE_EXPERIENCE } from '../../constants';
+import { Badge } from 'reactstrap';
 
 const About = () => {
+	const { t } = useTranslation();
 	const {
 		root: {
-		data: { about, skills, education },
+		data: { skills, education },
 		loader
 	} } = useSelector((state) => state);
 	useGetData();
@@ -19,47 +20,36 @@ const About = () => {
 		<AboutWrapper>
 			<SectionWrapper>
 				<Fade bottom>
-					<h2>{ LABEL_ABOUT }</h2>
+					<h2>{t('about')}</h2>
 				</Fade>
 				<Fade cascade>
-					{about?.length && about?.map((para, index) => (
 					<p
-						index={index}
-						key={index}
-						dangerouslySetInnerHTML={{ __html: para }}
+						dangerouslySetInnerHTML={{ __html: t('introduction')}}
 					></p>
-					))}
 				</Fade>
 					{loader && <SkeletonLoader/>}
 			</SectionWrapper>
 			<SectionWrapper>
 				<Fade bottom>
-					<h2>{ LABEL_SKILLS }</h2>
+					<h2>{t('skills')}</h2>
 				</Fade>
 				 <Fade cascade> 
 					<ChipHolder>
-						{skills?.length && skills?.map((skill, id) => (
-							<Chip
-								key={id}
-								label={skill.toUpperCase()}
-								variant='outlined'
-								size='medium'
-							/>
-						))}
+						{skills?.length && skills?.map((skill, id) => <Badge pill key={id}>{skill.toUpperCase()}</Badge>)}
 					</ChipHolder>
 				 </Fade>
-						{loader && <SkeletonLoader/>}
+				{loader && <SkeletonLoader/>}
 			</SectionWrapper>
 			<SectionWrapper>
 				<Fade bottom>
-					<h2>{ LABLE_EXPERIENCE }</h2>
+					<h2>{t('experience')}</h2>
 				</Fade>
 				<ExperienceSection />
 				{loader && <SkeletonLoader/>}
 			</SectionWrapper>
 			<SectionWrapper>
 				<Fade bottom>
-					<h2>{ LABEL_EDUCATION }</h2>
+					<h2>{t('education')}</h2>
 				</Fade>
 					<div>
 						{education?.length && education?.map((edu, id) => (
@@ -75,3 +65,9 @@ const About = () => {
 };
 
 export default About;
+
+
+    // padding: 5px 12px;
+    // border: 1px solid #231c42;
+    // border-radius: 12px;
+    // background-color: #a2ddc7;

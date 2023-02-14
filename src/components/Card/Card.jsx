@@ -4,28 +4,38 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import { faLink} from '@fortawesome/free-solid-svg-icons'
 import CardWrapper from './Card.style';
+import { CardBody, CardLink, CardText, CardTitle } from 'reactstrap';
 
-const Card = ({project}) => {
+const CardComponent = ({project}) => {
     const {title, description, github, web } = project;
 
     return (
         <CardWrapper>
-            <h2 className="title">{title}</h2>
-            <div className="description">{description}</div>
-            {
-                (github || web) ?
-                    <ul>
+            <CardBody>
+                <CardTitle tag='h5'>{title}</CardTitle>
+                <CardText>{description}</CardText>
+                <>
+                    {
+                        (github || web) ?
+                  <>
                         {
-                            github && <li><a href={github} rel="noreferrer" target="_blank" aria-label="github link"><FontAwesomeIcon icon={faGithub} /></a></li>
+                            github &&
+                            <CardLink href={github} target="_blank" rel="noreferrer" aria-label="github"><FontAwesomeIcon icon={faGithub} /></CardLink>
+                       
                         }
                         {
-                            web && <li><a href={web} rel="noreferrer" target="_blank" aria-label="web link"><FontAwesomeIcon icon={faLink} /></a></li>
+                            web &&
+                    
+                            <CardLink  href={web} target="_blank" rel="noreferrer" aria-label="web link"><FontAwesomeIcon icon={faLink} /></CardLink>
+
                         }
-                    </ul>
-                    : null
-            }
-        </CardWrapper>
+                     </>
+                                : null
+                }
+                </>
+            </CardBody>
+            </CardWrapper>
     )
 }
 
-export default Card
+export default CardComponent

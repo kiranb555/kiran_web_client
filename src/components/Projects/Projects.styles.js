@@ -4,22 +4,20 @@ export const ProjectWrapper = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	max-width: 1440px;
+	/* max-width: 1440px; */
 	margin: auto;
-	padding: 1.5rem;
+	margin-top: 100px;
 
 	@media only screen and (max-width: 600px) {
-		padding: 1rem;
+		margin-top: 75px;
 	}
 `;
 
-export const ProjectHeading = styled.div`
+export const ProjectHeading = styled.h2`
 	${({ theme }) => `
+		font-weight: bold;
 		text-transform: capitalize;
 		text-align: center;
-		font-size: 1.8rem;
-		font-weight: 600;
-		padding: 2.5rem 0;
 		color: ${theme.color.scaffold.text.secondary}
 	`}
 `;

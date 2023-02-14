@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { NavWrapper } from './NavBar.style';
 import { useViewPort } from '../ViewportProvider/ViewportProvider';
 import ThemeSwitch from '../ThemeSwitch/ThemeSwitch';
-import { navItems } from '../../constants';
 // import LogoutButton from '../LogoutButton/LogoutButton';
 
 const NavBar = () => {
@@ -18,8 +18,15 @@ const NavBar = () => {
 	const navHandler = () => {
 		setActive(false);
 	};
-	console.log(navItems)
 
+	const navItems = [
+		'home',
+		'about',
+		'contact',
+		// 'Blog'
+	];
+	
+	const { t } = useTranslation();
 	return (
 		<NavWrapper>
 			<div className={active ? 'header active' : 'header'}>
@@ -49,7 +56,7 @@ const NavBar = () => {
 								onClick={navHandler}
 							>
 								<NavLink to={`/${e.toLocaleLowerCase()}`} activeClassName="active-nav">
-									{e}
+									{t(e)}
 								</NavLink>
 								
 							</li>

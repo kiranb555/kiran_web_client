@@ -18,9 +18,9 @@ export const FooterWrapper = styled.footer`
 			& svg{
 				cursor: pointer;
 				margin-right: ${theme.sizing.size_20};
-				& :hover {
-					color: ${theme.color.icon.interactive};
-				}
+			}
+			&:hover {
+				color: rgb(255,255,255,.54);
 			}
 			&:last-child{
 				& svg{
