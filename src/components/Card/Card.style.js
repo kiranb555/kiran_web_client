@@ -1,40 +1,18 @@
 import styled from 'styled-components';
+import { Card } from 'reactstrap';
 
-const CardWrapper = styled.div`
+const CardWrapper = styled(Card)`
 	${({ theme }) => `
-		width: 320px;
-		height: 200px;
-		padding: 20px;
-		border-radius: 4px;
-		color:${theme.color.scaffold.text.secondary};
-		background-color: ${theme.color.background.bgLight};
-		box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%),
-			0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
-		display: flex;
-		flex-direction: column;
-		transition:transform 500ms cubic-bezier(0.165, 0.84, 0.44, 1);
-		.title{
-			text-transform: capitalize;
-			padding-bottom: 32px;
-		}
-		.description{
-			padding-bottom: 30px;
-		}
-		& ul{
-			list-style: none;
-			margin-top: auto;
-			display: flex;
-
-			& > li{
-				cursor: pointer;
-				font-size: 25px;
-				margin-right: 20px;
-			}
+		transition:transform 200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+		height: 100%;
+		.card-link{
+			cursor: pointer;
+			font-size: 20px;
+			margin-right: 20px;
 		}
 		&:hover{
-			transform: translate(0, -3px);
+			transform: translate(0, -4px);
 		}
-
 	`
 	}
 `;

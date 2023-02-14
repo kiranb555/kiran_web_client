@@ -116,6 +116,7 @@ const theme = {
 		size_300: '18.75rem',
 		size_500: '31.25rem',
 		size_35vh: '35vh',
+		size_45vh: '45vh',
 		size_980: '61.25rem',
 	},
 	typography: {

@@ -30,7 +30,7 @@ export const PaperTableWrapper = Styled.div`
 `;
 
 export const ChipWrapper = Styled.div`
-    & > button {
+    .badge{
         margin-right : 5px;
         margin-bottom : 5px;
     }

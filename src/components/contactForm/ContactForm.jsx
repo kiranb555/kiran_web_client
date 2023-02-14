@@ -1,16 +1,19 @@
+import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import Fade from "react-reveal/Fade";
-import { LABEL_EMAIL, LABEL_FIRST_NAME, LABEL_MESSAGE, LABEL_SECOND_NAME, LABEL_SUBMIT, LABLE_PHONE } from "../../constants";
+import { LABEL_EMAIL, LABEL_FIRST_NAME, LABEL_MESSAGE, LABEL_SECOND_NAME, LABLE_PHONE } from "../../constants";
 import {
   formInputHandler,
   formSubmit,
 } from "../../redux/actions/contactActions";
-import Button from "../Button";
-import { useViewPort } from "../ViewportProvider/ViewportProvider";
 import { ContactWrapper, Row, InputField } from "./ContactForm.styles";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSpinner, faCheck } from '@fortawesome/free-solid-svg-icons'
+import { Button as RTSButton } from 'reactstrap';
 
 const ContactForm = () => {
 	const dispatch = useDispatch();
+	const { t } = useTranslation();
 	const {formData, formLoader, formSubmittedSuccessfully } = useSelector((state) => state.contact);
 
   const handleChange = (e) => {
@@ -22,20 +25,17 @@ const ContactForm = () => {
 		e.preventDefault();
 		dispatch(formSubmit());
 	};
-
-	const { isLargeScreen } = useViewPort();
-
 	return (
 		<ContactWrapper>
 			<form onSubmit={formSubmitHandler}>
 				<Row>
 					<Fade bottom cascade>
 						<div>
-							<label>{LABEL_FIRST_NAME}</label>
+							<label>{t("first_name")}</label>
 							<InputField
 								label={LABEL_FIRST_NAME}
 								name="first_name"
-								placeholder={LABEL_FIRST_NAME}
+								placeholder={t("first_name")}
 								value={formData.first_name}
 								onChange={handleChange}
 								fullWidth
@@ -45,11 +45,11 @@ const ContactForm = () => {
 					</Fade>
 					<Fade bottom cascade>
 						<div>
-							<label>{ LABEL_SECOND_NAME }</label>
+							<label>{t("last_name")}</label>
 							<InputField
 								label={LABEL_SECOND_NAME}
 								name="second_name"
-								placeholder={LABEL_SECOND_NAME}
+								placeholder={t("last_name")}
 								value={formData.second_name}
 								onChange={handleChange}
 								fullWidth
@@ -60,13 +60,13 @@ const ContactForm = () => {
 				<Row>
 					<Fade bottom cascade>
 						<div>
-							<label>{ LABLE_PHONE }</label>
+							<label>{t('phone')}</label>
 							<InputField
 								label={ LABLE_PHONE }
 								type='tel'
 								name="phone"
 								pattern="[6-9]{1}[0-9]{9}"
-								placeholder={ LABLE_PHONE }
+								placeholder={t('phone')}
 								value={formData.phone}
 								onChange={handleChange}
 								fullWidth
@@ -92,12 +92,12 @@ const ContactForm = () => {
 				<Row>
 					<Fade bottom cascade>
 					<div>
-						<label>{  LABEL_MESSAGE }</label>
+						<label>{t('message')}</label>
 						<InputField
 							label={ LABEL_MESSAGE }
 							type='text'
 							name="message"
-							placeholder={ LABEL_MESSAGE }
+							placeholder={t('message')}
 							multiline
 							value={formData.message}
 							onChange={handleChange}
@@ -109,17 +109,9 @@ const ContactForm = () => {
 				</Row>
 				<Fade bottom cascade>
 					<div>
-						<Button
-							variant='contained'
-							size={!isLargeScreen ? 'medium' : 'large' }
-							type='submit'
-							label={ LABEL_SUBMIT }
-							icon
-							iconType={formLoader ? 'spinner'
-								: formSubmittedSuccessfully
-								? 'check'
-								: '' }
-						/>
+						<RTSButton outline type="submit">
+							{t("submit")} {formLoader ? <FontAwesomeIcon icon={faSpinner} spin/> : formSubmittedSuccessfully ? <FontAwesomeIcon icon={faCheck} />: null}
+						</RTSButton>
 					</div>
 				</Fade>
 			</form>
