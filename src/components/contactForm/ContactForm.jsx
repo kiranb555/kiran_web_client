@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import Fade from "react-reveal/Fade";
@@ -10,8 +11,10 @@ import { ContactWrapper, Row, InputField } from "./ContactForm.styles";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner, faCheck } from '@fortawesome/free-solid-svg-icons'
 import { Button as RTSButton } from 'reactstrap';
+import sendEmail from "./emailJsHelper";
 
 const ContactForm = () => {
+	const formRef = useRef()
 	const dispatch = useDispatch();
 	const { t } = useTranslation();
 	const {formData, formLoader, formSubmittedSuccessfully } = useSelector((state) => state.contact);
@@ -19,15 +22,16 @@ const ContactForm = () => {
   const handleChange = (e) => {
     let { name, value } = e.target;
     dispatch(formInputHandler({ key: name, value }));
-  };
+};
 
-	const formSubmitHandler = (e) => {
+const formSubmitHandler = (e) => {
 		e.preventDefault();
+		sendEmail({ref: formRef});
 		dispatch(formSubmit());
 	};
 	return (
 		<ContactWrapper>
-			<form onSubmit={formSubmitHandler}>
+			<form onSubmit={formSubmitHandler} ref={formRef}>
 				<Row>
 					<Fade bottom cascade>
 						<div>
