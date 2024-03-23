@@ -9,7 +9,7 @@ import {
 } from './home.styles';
 import useGetData from '../../api/useGetData';
 import { Button as RTSButton, Container, NavLink } from 'reactstrap';
-import profilePic from '../../images/profile_picture.avif';
+import profilePic from '../../images/profile.jpeg';
 import {
 	faGithub,
 	faLinkedin,
