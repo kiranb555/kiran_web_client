@@ -23,7 +23,7 @@ const NavBar = () => {
 		'home',
 		'about',
 		'contact',
-		// 'Blog'
+		'Blog'
 	];
 	
 	const { t } = useTranslation();

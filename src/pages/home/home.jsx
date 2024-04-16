@@ -12,11 +12,13 @@ import { Button as RTSButton, Container, NavLink } from 'reactstrap';
 import profilePic from '../../images/profile.jpeg';
 import {
 	faGithub,
+	faInstagram,
 	faLinkedin,
 } from '@fortawesome/free-brands-svg-icons';
-import { GITHUB_URL, LINKEDIN_URL } from '../../api/constant';
+import { GITHUB_URL, INSTA_URL, LINKEDIN_URL } from '../../api/constant';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+// import SvgUndraw from '../../components/svgUndraw/SvgUndraw';
 
 const Home = () => {
 	const { t } = useTranslation();
@@ -24,6 +26,13 @@ const Home = () => {
 	return (
 		<HomePageWrapper>
 			<BannerWrapper>
+				{/* <SvgUndraw type="BalloonSVG"/>
+				<SvgUndraw type="BikeSVG"/>
+				<SvgUndraw type="CameraSVG"/>
+				<SvgUndraw type="EscapeButtonSVG"/>
+				<SvgUndraw type="FunArrowSVG"/>
+				<SvgUndraw type="HeartSVG"/>
+				<SvgUndraw type="SmileyFaceSVG"/> */}
 				<div>
 					<img src={profilePic} alt="kiran profile pic"/>
 				</div>
@@ -36,6 +45,9 @@ const Home = () => {
 						</a>
 						<a href={GITHUB_URL} target="_blank" rel="noreferrer" aria-label='github'>
 							<FontAwesomeIcon icon={faGithub} />
+						</a>
+						<a href={INSTA_URL} target="_blank" rel="noreferrer" aria-label='instagram'>
+							<FontAwesomeIcon icon={faInstagram} />
 						</a>
 					</div>
 				</Fade>
