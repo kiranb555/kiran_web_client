@@ -1,5 +1,5 @@
 import { handleActions } from 'redux-actions';
-import { blogFormInputHandler,blogFormSubmit,blogFormReset,blogFormSubmittedSuccessfully,blogFormLoader } from '../actions/blogActions';
+import { blogFormInputHandler,blogFormReset,blogFormSubmittedSuccessfully,blogFormLoader } from '../actions/blogActions';
 
 const defaultState = {
     formData : {
