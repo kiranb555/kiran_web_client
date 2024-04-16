@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, { useState} from "react";
 import BlogCard from "./blogCard/BlogCard";
 import { BlogWrapper } from "./blog.styles";
 import { Spinner } from "reactstrap";
