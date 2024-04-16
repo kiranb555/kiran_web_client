@@ -3,7 +3,7 @@ import http from "../api/http.common";
 const getPortfolioAllData = async (params) => {
   let response = [];
   await http
-    .post(params)
+    .get(params)
     .then((res) => {
       response = res?.data ? res.data[0] : [];
     })

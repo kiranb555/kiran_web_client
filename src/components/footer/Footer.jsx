@@ -13,6 +13,9 @@ const Footer = () => {
 	const { t } = useTranslation();
 	return (
 	<FooterWrapper data-testid='footer'>
+		<div>
+			Kiran B
+		</div>
 		<Fade left cascade>
 			<div className='footer-social'>
 				<a href={TWITTER_URL} target="_blank" rel="noreferrer" aria-label='twitter'>
@@ -27,7 +30,7 @@ const Footer = () => {
 			</div>
 		</Fade>
 		<div className='footer-copywrite'>
-			&copy; 2023 Kiran.{t("all_rights_reserved")}
+			{t("all_rights_reserved")} &copy; {new Date().getFullYear()}
 		</div>
 	</FooterWrapper>
 	)

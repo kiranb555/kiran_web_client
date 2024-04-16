@@ -8,7 +8,7 @@ export function* watchGetInitialData(action) {
     yield put(loader(true));
     const response = yield call(
       getPortfolioAllData,
-      "/portfolio?secret=kiranPortfolio"
+      "/getalldata"
     );
     // const response = data;
     yield put(setData(response));

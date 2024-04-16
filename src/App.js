@@ -20,7 +20,9 @@ const About = lazy(() => import("./pages/about"));
 const Contact = lazy(() => import("./pages/contact"));
 const Login = lazy(() => import("./pages/login"));
 const Project = lazy(() => import("./pages/project"));
-// const Blog = lazy(() => import('./pages/blog'));
+const Blog = lazy(() => import('./pages/blog'));
+const BlogDetails = lazy(() => import('./pages/blog/BlogDetails.jsx'));
+const BlogForm = lazy(() => import('./pages/blogForm'));
 
 function App() {
   return (
@@ -38,7 +40,9 @@ function App() {
                   <Route exact path="/about" component={About} />
                   <Route exact path="/contact" component={Contact} />
                   <Route exact path="/project" component={Project} />
-                  {/* <Route exact path="/blog" component={Blog} /> */}
+                  <Route exact path="/blog" component={Blog} />
+                  <Route exact path="/blog/:id" component={BlogDetails} />
+                  <Route exact path="/myblog/add" component={BlogForm}/>
                       <Route exact path="/login" component={Login} />
                   <ProtectedRoute exact path="/dashboard" component={Dashboard}/>
               </Container>

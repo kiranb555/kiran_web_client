@@ -8,7 +8,8 @@ export const FooterWrapper = styled.footer`
 	color: ${theme.color.scaffold.greyscale.dark_mid_grey};
 	background-color: ${theme.color.background.ternary};
 	font-size: ${theme.sizing.size_20} ;
-
+	text-align: center;
+	
 	.footer-social {
 		display: flex;
 		justify-content: center;
