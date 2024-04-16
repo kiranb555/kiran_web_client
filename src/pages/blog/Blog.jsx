@@ -20,11 +20,10 @@ const Blog = () => {
     setValue(value === 0 ? 1 : 0);
     setDisplayData([...sortData]);
   }
-  console.log(displayData);
   return (
     <BlogWrapper>
       <div>
-        {/* {displayData && ( */}
+        {displayData && (
           <>
             <div className="heading">
               <h2> Blog </h2>
@@ -38,8 +37,8 @@ const Blog = () => {
             {displayData.length && displayData?.map((blog) => (
               <BlogCard blog={blog} key={blog?._id}/>
             ))}
-          </>
-        {/* )} */}
+          </>)
+        }
       </div>
     </BlogWrapper>
   );
