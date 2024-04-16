@@ -1,2 +1,2 @@
-export { default } from "./About.jsx";
+export { default } from "./about.jsx";
 

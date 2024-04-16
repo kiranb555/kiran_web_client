@@ -65,9 +65,3 @@ const About = () => {
 };
 
 export default About;
-
-
-    // padding: 5px 12px;
-    // border: 1px solid #231c42;
-    // border-radius: 12px;
-    // background-color: #a2ddc7;
