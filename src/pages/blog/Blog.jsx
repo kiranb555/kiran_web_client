@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useEffect, useState} from "react";
 import BlogCard from "./blogCard/BlogCard";
 import { BlogWrapper } from "./blog.styles";
 import { Spinner } from "reactstrap";
@@ -10,7 +10,7 @@ import { faSort } from '@fortawesome/free-solid-svg-icons';
 const Blog = () => {
   useGetBlogs();
   const {data = []} = useSelector((state) => state.blogData);
-  const [displayData, setDisplayData] = useState(data);
+  const [displayData, setDisplayData] = useState([]);
   const [value, setValue] = useState(0);
   const sortHandler = () => {
     const sortData = displayData.sort(function (a, b) {
@@ -20,10 +20,12 @@ const Blog = () => {
     setValue(value === 0 ? 1 : 0);
     setDisplayData([...sortData]);
   }
+  useEffect(() => {
+    setDisplayData(data);
+  }, [data])
   return (
     <BlogWrapper>
       <div>
-        {displayData &&
           <>
             <div className="heading">
               <h2> Blog </h2>
@@ -36,9 +38,8 @@ const Blog = () => {
             )}
             {displayData.length ? displayData?.map((blog) => (
               <BlogCard blog={blog} key={blog?._id}/>
-            )) : <p>Please reload the page</p> }
+            )) : null }
           </>
-        }
       </div>
     </BlogWrapper>
   );
