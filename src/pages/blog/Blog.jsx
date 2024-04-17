@@ -5,7 +5,7 @@ import { Spinner } from "reactstrap";
 import useGetBlogs from "../../api/useGetBlogs";
 import { useSelector } from "react-redux";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSort } from '@fortawesome/free-solid-svg-icons'
+import { faSort } from '@fortawesome/free-solid-svg-icons';
 
 const Blog = () => {
   useGetBlogs();
@@ -23,7 +23,7 @@ const Blog = () => {
   return (
     <BlogWrapper>
       <div>
-        {displayData && (
+        {displayData &&
           <>
             <div className="heading">
               <h2> Blog </h2>
@@ -34,10 +34,10 @@ const Blog = () => {
                 <Spinner />
               </div>
             )}
-            {displayData.length && displayData?.map((blog) => (
+            {displayData.length ? displayData?.map((blog) => (
               <BlogCard blog={blog} key={blog?._id}/>
-            ))}
-          </>)
+            )) : <p>Please reload the page</p> }
+          </>
         }
       </div>
     </BlogWrapper>
