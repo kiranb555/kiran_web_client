@@ -25,7 +25,7 @@ export const HomePageWrapper = styled.div`
 export const BannerWrapper = styled.div`
 	${({ theme }) => `
 	min-height: ${theme.sizing.size_300};
-	height: ${theme.sizing.size_35vh};
+	height: 350px;
 	background: linear-gradient(-213deg, #5e31dc 0%, ${theme.color.background.primary} 100%);
 	color: ${theme.color.scaffold.text.primary};
 	border-right: none;
