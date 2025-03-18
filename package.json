@@ -27,7 +27,7 @@
     "jest-styled-components": "^7.0.5",
     "jsdom": "^17.0.0",
     "node-sass": "^9.0.0",
-    "prismjs": "^1.29.0",
+    "prismjs": "^1.30.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-i18next": "^12.1.4",
